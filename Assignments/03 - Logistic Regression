@@ -1,0 +1,44 @@
+Open MLProjectSupport\SMSSpam\Framework-3-LogisticRegression.py. 
+
+Complete the implementation of LogisticRegression using the stub referenced from the framework. 
+Note that the framework provides a small test case with some visualizations to help you debug.
+
+Use a threshold of 0.5 for classification (if score for a sample after the sigmoid is > 0.5 it is classified as spam).
+
+Use gradient descent for optimization as outlined in the framework code.
+
+HAND IN:
+
+1 Point --
+
+The visualization of the model learned on the UnitTest using 50 iterations of gradient descent, stepSize=.1, convergence=0.001
+
+2 Points –
+
+Hand in your completed LogisticRegression.py & EvaluateBinaryProbabilityEstimate.py. Make sure they are clear. 
+If the TA has a hard time finding and spot-checking the key components (e.g. gradient calculation in __gradientDescentStep, 
+the logic in incrementalFit, and loss calculation) they will have to deduct credit.
+
+1 Point –
+
+Tune the hyperparameter ‘convergence’ by trying [ 0.01, 0.001, 0.0001, 0.00001 ] (with stepSize of 0.1). Produce a table showing:
+
+<convergence parameter>, <steps to convergence>, <validation set accuracy>
+
+for each setting of the convergence hyperparameter.
+
+1 Point – 
+
+If you had to try one more setting, which would be more likely to improve the validation set accuracy: 0.1 or 0.000005. Explain why in 50 words or less.
+
+1 Point – 
+
+Produce a plot showing the training set loss and the validation set loss every 100 steps during the run 
+with convergence=0.00001 and stepSize of 0.1. In no more than 100 words, describe the difference between the 
+training and validation loss. Which set does the model have better loss on? Why?
+
+RESOURCES:
+
+The best way to get info on the elements you'll need to implement is to review the course slides for this lecture, which you can find on this page: https://intelligentsystem.io/course.html
+
+[ Direct link: https://intelligentsystem.io/course/lectures/04%20--%20Logistic%20Regression.pptx ]

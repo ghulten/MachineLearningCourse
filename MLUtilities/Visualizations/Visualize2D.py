@@ -13,7 +13,7 @@ class Visualize2D(object):
         self.pixels = self.image.load()
         self.size = size
 
-    def PlotPoints(self, x, y, RGBFloat, pointSize=5, weights=None, labelMask=None):
+    def Plot2DPoints(self, x, y, RGBFloat, pointSize=5, weights=None, labelMask=None):
         if weights == None:
             weights = [1 for i in range(len(x))]
         
@@ -43,13 +43,13 @@ class Visualize2D(object):
 
         predicted = model.predict(points)
 
-        self.PlotPoints(points, predicted, colorFalse, pointSize=1, weights = [1 for i in predicted], labelMask = [0])
-        self.PlotPoints(points, predicted, colorTrue, pointSize=1, weights =  [1 for i in predicted], labelMask = [1])
+        self.Plot2DPoints(points, predicted, colorFalse, pointSize=1, weights = [1 for i in predicted], labelMask = [0])
+        self.Plot2DPoints(points, predicted, colorTrue, pointSize=1, weights =  [1 for i in predicted], labelMask = [1])
 
-    def PlotDataAndBinaryConcept(self, x, y, model):
+    def Plot2DDataAndBinaryConcept(self, x, y, model):
         self.PlotBinaryConcept(model)
-        self.PlotPoints(x, y, kBrightRed, labelMask=[0])
-        self.PlotPoints(x, y, kBrightGreen, labelMask=[1])
+        self.Plot2DPoints(x, y, kBrightRed, labelMask=[0])
+        self.Plot2DPoints(x, y, kBrightGreen, labelMask=[1])
 
     def Save(self):
         self.image.save(self.outputPath)
