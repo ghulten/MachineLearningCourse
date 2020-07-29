@@ -8,13 +8,15 @@ kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamC
 #    in this case, the xRaw array contains the raw SMS text strings and yRaw contains 1 if the message is spam and 0 if it isn't.
 (xRaw, yRaw) = SMSSpamSupport.LoadRawData(kDataPath)
 
+
+import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 # The 'TrainValidateTestSplit' function separates the raw data into three sets to use for your modeling process. These are:
 #  1) the training data, which you should use to build your model and make any feature creation decision
 #  2) the validation data, which you should use to tune your modeling process (hyper-parameters, etc)
 #  3) the testing data, which you should use sparingly to estimate the quality of your final model
 #
 # In this case, use 80% of data for training, 10% for validation, and 10% for testing.
-(xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = SMSSpamSupport.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
+(xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = Sample.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
 
 # Now do some basic data exploration. Always a good idea to look at some very basic stats about your data sets 
 print("Statistics on the data sets:")

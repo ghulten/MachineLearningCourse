@@ -5,7 +5,9 @@ import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamSupport as SMSSpamS
 kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
 
 (xRaw, yRaw) = SMSSpamSupport.LoadRawData(kDataPath)
-(xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = SMSSpamSupport.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
+
+import MachineLearningCourse.MLUtilities.Data.Sample as Sample
+(xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = Sample.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
 
 import MachineLearningCourse.MLUtilities.Learners.LogisticRegression as LogisticRegression
 import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification

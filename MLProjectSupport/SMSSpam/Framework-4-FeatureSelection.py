@@ -5,7 +5,9 @@ import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamSupport as SMSSpamS
 kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
 
 (xRaw, yRaw) = SMSSpamSupport.LoadRawData(kDataPath)
-(xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = SMSSpamSupport.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
+
+import MachineLearningCourse.MLUtilities.Data.Sample as Sample
+(xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = Sample.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
 
 import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamFeaturize as SMSSpamFeaturize
 
@@ -16,7 +18,7 @@ if findTop10Words:
     print("Top 10 words by frequency: ", featurizer.FindMostFrequentWords(xTrainRaw, 10))
     print("Top 10 words by mutual information: ", featurizer.FindTopWordsByMutualInformation(xTrainRaw, yTrain, 10))
 
-# set to true when your implementation of the 'FindWords' stuff is working
+# set to true when your implementation of the 'FindWords' part of the assignment is working
 doModeling = False
 if doModeling:
     # Now get into model training
