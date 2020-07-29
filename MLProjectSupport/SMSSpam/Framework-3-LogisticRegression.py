@@ -1,4 +1,6 @@
 
+kOutputDirectory = "C:\\temp\\visualize"
+
 runUnitTest = True
 if runUnitTest:
     # Little synthetic dataset to help with implementation. 2 features, 8 samples.
@@ -23,7 +25,7 @@ if runUnitTest:
         print(" fit for %d iterations, train set loss is %.4f" % (model.totalGradientDescentSteps, model.loss(xTrain, yTrain)))
 
         # and visualize the model's decision boundary
-        visualization = Visualize2D.Visualize2D("C:\\temp\\visualize", "{0:04}.test".format(model.totalIterations))
+        visualization = Visualize2D.Visualize2D(kOutputDirectory, "{0:04}.test".format(model.totalIterations))
         visualization.Plot2DDataAndBinaryConcept(xTrain, yTrain, model)
         visualization.Save()
         
@@ -73,4 +75,4 @@ if runSMSSpam:
     # 
     # # trainLosses, validationLosses, and lossXLabels are parallel arrays with the losses you want to plot at the specified x coordinates
     #
-    # Charting.PlotTrainValidateTestSeries(trainLosses, validationLosses, xAxisPoints=lossXLabels, chartTitle="Logistic Regreession - Converge = 0.00001 Step = 0.1", xAxisTitle="Gradient Descent Steps", yAxisTitle="Avg. Loss", outputDirectory=kOutputDirectory, fileName="Plot")
+    # Charting.PlotTrainValidateTestSeries(trainLosses, validationLosses, xAxisPoints=lossXLabels, chartTitle="Logistic Regression - Converge = 0.00001 Step = 0.1", xAxisTitle="Gradient Descent Steps", yAxisTitle="Avg. Loss", outputDirectory=kOutputDirectory, fileName="Gradient Descent Plot")

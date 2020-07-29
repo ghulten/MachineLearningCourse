@@ -11,6 +11,15 @@ class SMSSpamFeaturize(object):
         self.vocabularyCreated = False
         self.vocabulary = []
 
+    def Tokenize(self, xRaw):
+        return str.split(xRaw)
+    
+    def FindMostFrequentWords(self, x, n):
+        print("Stub FindMostFrequentWords in ", __file__)
+
+    def FindTopWordsByMutualInformation(self, x, n):
+        print("Stub FindTopWordsByMutualInformation in ", __file__)
+
     def CreateVocabulary(self, xTrainRaw, yTrainRaw, supplementalVocabularyWords=[]):
         if self.vocabularyCreated:
             raise UserWarning("Calling CreateVocabulary after the vocabulary was already created. Call ResetVocabulary to reinitialize.")
@@ -27,7 +36,7 @@ class SMSSpamFeaturize(object):
         features = []
         
         # for each word in the vocabulary output a 1 if it appears in the SMS string, or a 0 if it does not
-        tokens = xRaw.split()
+        tokens = self.Tokenize(xRaw)
         for word in self.vocabulary:
             if word in tokens:
                 features.append(1)

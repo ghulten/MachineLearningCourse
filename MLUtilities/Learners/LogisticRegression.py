@@ -67,7 +67,7 @@ class LogisticRegression(object):
         if not self.converged:
             print("Warning: did not converge after taking the maximum allowed number of steps.")
         elif verbose:
-            print("LogisticRegression converged in %d steps (%.2f seconds) -- hyperparameters: stepSize=%f and convergence=%f." % (self.totalGradientDescentSteps, runtime, stepSize, convergence))
+            print("LogisticRegression converged in %d steps (%.2f seconds) -- %d features. Hyperparameters: stepSize=%f and convergence=%f." % (self.totalGradientDescentSteps, runtime, len(self.weights), stepSize, convergence))
 
     def visualize(self):
         print("w0: %f " % (self.weight0), end='')
