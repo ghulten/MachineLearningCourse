@@ -1,3 +1,5 @@
+import random
+
 def TrainValidateTestSplit(x, y, percentValidate = .1, percentTest = .1):
     if(len(x) != len(y)):
         raise UserWarning("Attempting to split into training and testing set.\n\tArrays do not have the same size. Check your work and try again.")
@@ -19,3 +21,23 @@ def TrainValidateTestSplit(x, y, percentValidate = .1, percentTest = .1):
     yTrain = y[numTest+numValidate:]
 
     return (xTrain, yTrain, xValidate, yValidate, xTest, yTest)
+
+def BootstrapSample(x, y, limit=None):
+    if len(x) != len(y):
+        raise UsesrWaring("x list and y list are different lengths.")
+    
+    if limit == None:
+        limit = len(x)
+        
+    sampleIndexes = [ random.randint(0, len(x) - 1) for i in range(limit) ]
+    sampledX = [ x[i] for i in sampleIndexes ]
+    sampledY = [ y[i] for i in sampleIndexes ]
+    
+    return (sampledX, sampledY)
+
+def Shuffle(x, y):
+    # use to randomly reorder samples & labels while keeping the correct label with the correct sample
+    tmp = list(zip(x, y))
+    random.shuffle(tmp)
+    xShuffled, yShuffled = zip(*tmp)
+    return (xShuffled, yShuffled)

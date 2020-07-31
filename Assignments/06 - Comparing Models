@@ -1,7 +1,37 @@
-Open MLProjectSupport\SMSSpam\Framework-6-ComparingModels.py
+Open MLProjectSupport\SMSSpam\Framework-6-EvaluatingModels.py
 
+Look at MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds and implement error bounds 
+   per Mitchell equation 5.1, supporting all the confidence levels provided in table 5.1.
 
+0.5 points - Hand in your code for MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds.GetAccuracyBounds
 
+Evaluate the validation set accuracy of a logistic regression model with the following hyperparameters:
+    stepSize = 0.1
+    convergence = 0.0001
+    numMutualInformationWords = 25
+    numFrequentWords = 0
 
+0.5 points - What is the 90% confidence interval for validation set accuracy for this model.
 
+Fit the MostCommonClassModel from MachineLearningCourse.MLUtilities.Learners.MostCommonClassModel
+  and evaluate this model on the validation set.
 
+0.5 points - At the 80% confidence level (using a two sided bound) is the logistic regression model better than
+   the most common class model? In 2-3 sentences explain how you came to the answer.
+
+0.5 points - At the 75% confidence level (using a one sided bound) is the logistic regression model better than
+   the most common class model? In 2-3 sentences explain how yo ucame to the answer.
+
+Now use 5-fold cross validation on the training set to evaluate:
+   * logistic regression (using the same hyperparameters),
+   * and the most common model.
+
+You can find a helper function for selecting training and testing data per fold in:
+
+MachineLearningCourse.MLUtilities.Data.CrossValidation
+
+1.0 points - Hand in the code you used to do cross validation and to evaluate the accuracy and bounds.
+
+1.0 points - Among the following possibilities for one-sided bounds: 75%, 90%, 95%, 97.5%, 99.5%
+    Which is the highest level of confidence where we can say the logistic regression model is better than
+     simply predicting the most common class? In 3-5 sentences explain how you came to that conclusion.
