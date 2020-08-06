@@ -1,6 +1,6 @@
 kOutputDirectory = "C:\\temp\\visualize"
 
-import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamSupport as SMSSpamSupport
+import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamSupport
 
 kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
 
@@ -9,7 +9,7 @@ kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamC
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 (xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = Sample.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
 
-import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamFeaturize as SMSSpamFeaturize
+import MachineLearningCourse.Assignments.Module01.SupportCode.SMSSpamFeaturize as SMSSpamFeaturize
 
 findTop10Words = True
 if findTop10Words:
@@ -25,9 +25,9 @@ if doModeling:
     import MachineLearningCourse.MLUtilities.Learners.LogisticRegression as LogisticRegression
     import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
 
-    # The hyper parameters to use with logistic regression for this assignment
-    stepSize = 0.1
-    convergence = 0.0001
+    # The hyperparameters to use with logistic regression for this assignment
+    stepSize = 1.0
+    convergence = 0.001
 
     # Remeber to create a new featurizer object/vocabulary for each part of the assignment
     featurizer = SMSSpamFeaturize.SMSSpamFeaturize(useHandCraftedFeatures=False)

@@ -8,3 +8,19 @@ The reading assignments are in these two books:
 
 Machine Learning by Mitchell -- http://www.cs.cmu.edu/~tom/mlbook.html
 Building Intelligent Systems by Hulten -- http://intelligentsystem.io/book.html
+
+The assignments are grouped into modules that are each centered around a theme.
+
+Module 1 - The Basics with Logistic Regression
+
+This module teaches the basics of doing machine learning: going from simple models to a well-used professional 
+ modeling tool - logistic regression and exploring the model evaluation and optimization process along the way.
+ It uses a SMS spam domain to illustrate concepts with a realistic example.
+
+Module 2 - Bias and Variance with Ensembles
+
+This module builds on Module 1 to explore more advanced concepts in modeling. 
+
+Module 3 - Neural Networks
+
+Module 4 - Reinforcement Learning

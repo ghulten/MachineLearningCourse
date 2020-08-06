@@ -1,0 +1,63 @@
+Tune your best SMSSpam model. Open SupportCode\Framework-7-ModelTuning_SMSSpam.py
+
+Produce the most accurate SMS Spam filtering model you can using the code you've developed over the previous
+   lessons (no external learning systems).
+
+WARNING! This exercise can take a lot of CPU runtime. Plan accordingly. 
+  If you try to do this assignemnt on the day before it's due, you'll probably run out of time.
+
+Use 5-fold cross validation on the training set (not validation or test) to carry out the hyperparameter search.
+
+Start with the following hyperparameters values:
+
+bestParameters['stepSize'] = 1.0
+bestParameters['convergence'] = 0.005
+bestParameters['numFrequentWords'] = 0
+bestParameters['numMutualInformationWords'] = 20
+
+Optimize one hyperparameter at a time by doing a parameter sweep.
+
+    1) for each sweep try at least 6 settings, ranging somewhat uniformly between 'probably too high', to 'probably too low'
+        * e.g. for the feature selection parameters try varying by 20, e.g.: 20, 40, 60, ...
+        * for the gradient descent optimization parameters try several small integers and several much smaller, like 0.01, 0.001, ... 0.00001
+
+    2) for each sweep, produce:
+        * a plot showing the values of the parameter being optimized on X and (crossvalidation) accuracy with 50% (2-sided) error bars on Y
+        * a plot showing the values of the parameter being optimized on X and total runtime for the entire crossvalidation run on Y (in seconds)
+        * 2-3 sentences of interpretation. Were the parameters you tried too high or low? Would you tune further? Which way?
+
+    3) after each sweep, update hyperparameter value (for future sweeps) in a way that tradesoff runtime vs accuracy, so that:
+        * the value you pick is tied with the highest accuracy value according to a 75% 1-sided bound (or beats all others according to this bound)
+        * the value you pick has the lowest runtime among these 'tied' values
+
+    4) after optimizing each hyperparameter, evaluate accuracy on the validation set:
+        * produce a model with all the best hyperparameters you've found so far (training on the full training set)
+        * produce a plot with validation accuracy and 50% (2-sided) error bars on Y - and the number of optimization sweeps done 
+            to that point on the X-axis (on point per sweep you do, increasing x value indicates further optimization.)
+
+    5) continute iterating on optimizing hyperparameters until convergence:
+        * start off by do an initial round of sweeps so that each hyperparameter is optimized at least one time
+        * continue doing sweeps based on your interpretation of the charts -- choose the best hyperparameter & direction
+        * stop when you can no longer significantly improve accuracy according to a 75% 1-sided bound
+        
+Evaluate on the test data:
+    1) evaluate the model learned with the best hyperparameters you found on the test data
+    2) evaluate the model learned with the initial hyperparameters on the test data
+    3) produce an ROC curve comparing these two models (the initial vs the best)
+
+HAND IN a short report showing:
+3.0 points - The plots you produce in step 2 for the first 4 steps of optimization (one sweep on each of the hyperparameters). Label clearly so the TA can follow the steps (and potentially reproduce them)!
+1.0 points - The final plot you produce in step 4, showing how validation accuracy improves throughout the entire optimization run.
+1.0 points - The final hyperparameters you learned.
+1.0 points - The ROC plot you produced on the test set (comparing your best model to the initial model).
+1.0 points - A short analysis of how the initial model relatest to the optimized model, including confidence intervals and performance at low false positive rates.
+
+Tips for approaching this assignment:
+    - You probably want to use joblib to run your evaluations in parallel (sample in framework code)
+    - You may want to your logistic regression to check for convergence less frequently (e.g. every 10 iterations, could be a ~2x speedup)
+    - Make sure to limit the number of folds you use with crossvalidation (2 is fine for this exercise)
+    - Test your hyperparameter settings before launching a giant loop because some settings can take a long time!
+        * If you pick the wrong parameters, a single run can take hours.
+        * It's okay to limit your parameter sweeps trying values that take 'reasonable time' on your machine (less than ~30 minutes)
+        * If all your code is working correctly, you'll be able to find highly accurate models, even with that constraint
+    - Consider outputting all the results you need as you go & making it possible to restart (manually at least) - if you don't plan and something crashes...you'll be sad...

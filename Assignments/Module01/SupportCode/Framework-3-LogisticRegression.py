@@ -16,7 +16,7 @@ if runUnitTest:
 
     while not model.converged:
         # do 10 iterations of training
-        model.incrementalFit(xTrain, yTrain, maxSteps=10, stepSize=.1, convergence=0.0001)
+        model.incrementalFit(xTrain, yTrain, maxSteps=10, stepSize=1.0, convergence=0.005)
         
         # then look at the models weights
         model.visualize()
@@ -32,7 +32,7 @@ if runUnitTest:
 # Once your LogisticRegression learner seems to be working, set this flag to True and try it on the spam data
 runSMSSpam  = False
 if runSMSSpam:
-    import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamSupport as SMSSpamSupport
+    import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamSupport
 
     ############################
     # Set up the data
@@ -44,7 +44,7 @@ if runSMSSpam:
     import MachineLearningCourse.MLUtilities.Data.Sample as Sample
     (xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = Sample.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
 
-    import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamFeaturize as SMSSpamFeaturize
+    import MachineLearningCourse.Assignments.Module01.SupportCode.SMSSpamFeaturize as SMSSpamFeaturize
     featurizer = SMSSpamFeaturize.SMSSpamFeaturize(useHandCraftedFeatures=True)
     featurizer.CreateVocabulary(xTrainRaw, yTrain, supplementalVocabularyWords=['call','to','your'])
 
@@ -59,7 +59,7 @@ if runSMSSpam:
     import MachineLearningCourse.MLUtilities.Learners.LogisticRegression as LogisticRegression
     logisticRegressionModel = LogisticRegression.LogisticRegression()
     
-    logisticRegressionModel.fit(xTrain, yTrain, stepSize=0.1, convergence=.0001)
+    logisticRegressionModel.fit(xTrain, yTrain, stepSize=1.0, convergence=0.005)
     
     #############################
     # Evaluate the model
@@ -77,4 +77,4 @@ if runSMSSpam:
     # 
     # # trainLosses, validationLosses, and lossXLabels are parallel arrays with the losses you want to plot at the specified x coordinates
     #
-    # Charting.PlotTrainValidateTestSeries(trainLosses, validationLosses, xAxisPoints=lossXLabels, chartTitle="Logistic Regression - Converge = 0.00001 Step = 0.1", xAxisTitle="Gradient Descent Steps", yAxisTitle="Avg. Loss", outputDirectory=kOutputDirectory, fileName="Gradient Descent Plot")
+    # Charting.PlotSeries([trainLosses, validationLosses], ['Train', 'Validate'], lossXLabels, chartTitle="Logistic Regression", xAxisTitle="Gradient Descent Steps", yAxisTitle="Avg. Loss", outputDirectory=kOutputDirectory, fileName="3-Logistic Regression Train vs Validate loss")

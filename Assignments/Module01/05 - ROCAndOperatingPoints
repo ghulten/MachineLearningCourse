@@ -1,7 +1,7 @@
-Open MLProjectSupport\SMSSpam\Framework-5-ROCAndOperatingPoints.py
+Open SupportCode\Framework-5-ROCAndOperatingPoints.py
 
 Run the framework and look at the ROC curve that it outputs. Make sure to check out the
-TabulateModelPerformanceForROC helper function.
+  TabulateModelPerformanceForROC helper function.
 
 HAND IN:
 

@@ -1,9 +1,9 @@
-Open MLProjectSupport\SMSSpam\Framework-3-LogisticRegression.py. 
+Open SupportCode\Framework-3-LogisticRegression.py. 
 
 Complete the implementation of LogisticRegression using the stub referenced from the framework. 
 Note that the framework provides a small test case with some visualizations to help you debug.
 
-Use a threshold of 0.5 for classification (if score for a sample after the sigmoid is > 0.5 it is classified as spam).
+Use a threshold of 0.5 for classification (if score for a sample after the sigmoid is > 0.5 it is classified as 1 (in this case, that's spam)).
 
 Use gradient descent for optimization as outlined in the framework code.
 
@@ -11,7 +11,7 @@ HAND IN:
 
 1 Point --
 
-The visualization of the model learned on the UnitTest using 50 iterations of gradient descent, stepSize=.1, convergence=0.001
+The visualization of the model learned on the UnitTest using 10 iterations of gradient descent, stepSize=1.0, convergence=0.005
 
 2 Points –
 
@@ -21,7 +21,7 @@ the logic in incrementalFit, and loss calculation) they will have to deduct cred
 
 1 Point –
 
-Tune the hyperparameter ‘convergence’ by trying [ 0.01, 0.001, 0.0001, 0.00001 ] (with stepSize of 0.1). Produce a table showing:
+Tune the hyperparameter ‘convergence’ by trying [ 0.01, 0.001, 0.0001, 0.00001 ] (with stepSize of 1.0). Produce a table showing:
 
 <convergence parameter>, <steps to convergence>, <validation set accuracy>
 
@@ -29,13 +29,14 @@ for each setting of the convergence hyperparameter.
 
 1 Point – 
 
-If you had to try one more setting, which would be more likely to improve the validation set accuracy: 0.1 or 0.000005. Explain why in 50 words or less.
+Describe in 2-3 sentences your interpretation of the output of this hyperparameter sweep. Include a justification for trying more parameters
+  or stopping there. If you do think you should try more parameters, what is the next one you would try?
 
 1 Point – 
 
 Produce a plot showing the training set loss and the validation set loss every 100 steps during the run 
-with convergence=0.00001 and stepSize of 0.1. In no more than 100 words, describe the difference between the 
-training and validation loss. Which set does the model have better loss on? Why?
+ with the best convergence value you found in the parameter sweep and stepSize of 1.0. In no more than 100
+ words describe the difference between the training and validation loss. Which set does the model have better loss on? Why?
 
 RESOURCES:
 

@@ -11,7 +11,7 @@ class LogisticRegression(object):
         if featureCount != None:
             self.__initialize(featureCount)
 
-    def __testInput(self,x,y):
+    def __testInput(self, x, y):
         if len(x) == 0:
             raise UserWarning("Trying to fit but can't fit on 0 training samples.")
 
@@ -45,7 +45,7 @@ class LogisticRegression(object):
         print("Stub gradientDescentStep in ", __file__)
 
     # Allows you to partially fit, then pause to gather statistics / output intermediate information, then continue fitting
-    def incrementalFit(self, x, y, maxSteps=1, stepSize=0.01, convergence=0.01):
+    def incrementalFit(self, x, y, maxSteps=1, stepSize=1.0, convergence=0.005):
         self.__testInput(x,y)
         if self.isInitialized == False:
             self.__initialize(len(x[0]))
@@ -55,7 +55,7 @@ class LogisticRegression(object):
         
         print("Stub incrementalFit in ", __file__)
 
-    def fit(self, x, y, maxSteps=50000, stepSize=0.01, convergence=0.01, verbose = True):
+    def fit(self, x, y, maxSteps=50000, stepSize=1.0, convergence=0.005, verbose = True):
         
         startTime = time.time()
         

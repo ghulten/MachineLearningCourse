@@ -1,6 +1,6 @@
 kOutputDirectory = "C:\\temp\\visualize"
 
-import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamSupport as SMSSpamSupport
+import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamSupport
 
 kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
 
@@ -11,7 +11,7 @@ import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 
 import MachineLearningCourse.MLUtilities.Learners.LogisticRegression as LogisticRegression
 import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
-import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamFeaturize as SMSSpamFeaturize
+import MachineLearningCourse.Assignments.Module01.SupportCode.SMSSpamFeaturize as SMSSpamFeaturize
 import MachineLearningCourse.MLUtilities.Visualizations.Charting as Charting
 
 # A helper function for calculating FN rate and FP rate across a range of thresholds
@@ -23,10 +23,10 @@ def TabulateModelPerformanceForROC(model, xValidate, yValidate):
 
    try:
       for threshold in thresholds:
-         FPRs.append(EvaluateBinaryClassification.FalsePositiveRate(yValidate, model.predict(xValidate, threshold)))
-         FNRs.append(EvaluateBinaryClassification.FalseNegativeRate(yValidate, model.predict(xValidate, threshold)))
+         FPRs.append(EvaluateBinaryClassification.FalsePositiveRate(yValidate, model.predict(xValidate, classificationThreshold=threshold)))
+         FNRs.append(EvaluateBinaryClassification.FalseNegativeRate(yValidate, model.predict(xValidate, classificationThreshold=threshold)))
    except NotImplementedError:
-      raise UserWarning("The 'model' parameter must have a 'predict' method that supports using a 'threshold' parameter with range [ 0 - 1.0 ] to create classifications.")
+      raise UserWarning("The 'model' parameter must have a 'predict' method that supports using a 'classificationThreshold' parameter with range [ 0 - 1.0 ] to create classifications.")
 
    return (FPRs, FNRs, thresholds)
 

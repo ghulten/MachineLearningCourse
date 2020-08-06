@@ -1,4 +1,4 @@
-Open MLProjectSupport\SMSSpam\Framework-4-FeatureSelection.py. 
+Open SupportCode\Framework-4-FeatureSelection.py. 
 
 Modify SMSSpamFeaturize.CreateVocabulary to do feature selection with:
 
@@ -10,7 +10,9 @@ Modify SMSSpamFeaturize.CreateVocabulary to do feature selection with:
     Change: def CreateVocabulary(self, xTrainRaw, yTrainRaw, supplementalVocabularyWords=[]):
     To:     def CreateVocabulary(self, xTrainRaw, yTrainRaw, numFrequentWords=0, numMutualInformationWords=0, supplementalVocabularyWords=[]):
 
-    And CreateVocabulary with (and implement) the provided stub fuctions: FindMostFrequentWords and FindTopWordsByMutualInformation
+    Update CreateVocabulary to call the provided stub fuctions: FindMostFrequentWords and FindTopWordsByMutualInformation
+
+    Implement the stub functions...
 
 Tokenize by splitting on whitespace.
 
@@ -30,24 +32,29 @@ A document that contains the following tables (clearly labeled!)
 
 0.5 points -- A list of the top 10 bag of word features selected by filtering by frequency.
 0.5 points -- A list of the top 10 bag of word features selected by filtering by mutual information.
-1.0 point -- Code for your implementation of FindMostFrequentWords and FindTopWordsByMutualInformation (and supporting code) -- make sure it is clear and easy to grade!
+1.0 point  -- Code for your implementation of FindMostFrequentWords and FindTopWordsByMutualInformation (and supporting code) 
+                ** make sure it is clear and easy to grade!
 
 For the following use:
-    stepSize = 0.1
-    convergence = 0.0001
+    stepSize = 1.0
+    convergence = 0.001
     Train on traing set, evaluate on validation set
 
 * Run logistic regression with the top 10 words by frequency.
-    - 0.5 points -- (Short answer 1-3 sentences) Compare the accuracy of the model learned with 10 most frequent words to the model that predicts the most common class. Increase the number of features selected by 5 until you outperform the most common class model. What number do you need?
+    - 0.5 points -- (Short answer 1-3 sentences) Compare the accuracy of the model learned with 10 most frequent words
+                    to the model that predicts the most common class. Increase the number of features selected by 5 until you outperform 
+                    the most common class model. What number do you need?
 
 * Run logistic regression with the top 10 words by mutual information.
     - 0.5 points -- Produce a table showin the selected words and the weights learned for them
-    - 0.5 points -- Create an if statement that partially matches the linear model, classifying some of the same messages as spam (with no additional false positives). Use no more than 5 clauses in the if statement.
-        e.g. If has_word(X) and has_word(Y) then classify as spam
+    - 0.5 points -- Create an if statement that partially matches the linear model, classifying some of the same messages
+                    as spam (with no additional false positives). Use no more than 5 clauses in the if statement.
+                    e.g. If has_word(X) and has_word(Y) then classify as spam
 
 * Perform a parameter sweep on the number of features to use as selected by frequency, using n = [ 1, 10, 20, 30, 40, 50 ]
     - 0.5 points -- Produce a plot with the number of features used on the X axis, and the train and validation losses plotted on the y axis
-    - 0.5 points -- Make sure to label the chart correctly and completely! (in the future you will lose 0.5 points for any chart that isn't properly labled)
+    - 0.5 points -- Make sure to label the chart correctly and completely! (in the future you will lose 0.5 points for any
+                    chart that isn't properly labled)
 
 * Perform a parameter sweep on the number of features to use as selected by mutual information, using n = [ 1, 10, 20, 30, 40, 50 ]
     - 0.5 points -- Produce a plot with the number of features used on the X axis, and the train and validation losses plotted on the y axis

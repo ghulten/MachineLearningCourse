@@ -1,4 +1,4 @@
-Open MLProjectSupport\SMSSpam\Framework-6-EvaluatingModels.py
+Open SupportCode\Framework-6-ComparingModels.py
 
 Look at MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds and implement error bounds 
    per Mitchell equation 5.1, supporting all the confidence levels provided in table 5.1.
@@ -6,8 +6,8 @@ Look at MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds and implement 
 0.5 points - Hand in your code for MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds.GetAccuracyBounds
 
 Evaluate the validation set accuracy of a logistic regression model with the following hyperparameters:
-    stepSize = 0.1
-    convergence = 0.0001
+    stepSize = 1.0
+    convergence = 0.001
     numMutualInformationWords = 25
     numFrequentWords = 0
 

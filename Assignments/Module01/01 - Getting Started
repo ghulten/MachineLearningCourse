@@ -1,0 +1,23 @@
+You will need to set up your environment prepare for later assignments. This involves installing the relevant 
+  tools and running the sample code on sample data.
+
+First, get familiar with python 3.x: https://www.learnpython.org/
+
+No way Python!?!?
+
+Python is widely used in machine learning and data science to process, prepare, & explore data; and to stitch 
+  together ML tools into experiments/work flows. Keep in mind that we are only going to be programming very basic
+  versions of the various algorithms, and there will be very little need for optimization. You don't have to be 
+  a python expert to complete these assignments.
+
+I provide python framework code to get you started on the assignments, deal with data loading, etc.
+ 
+Look in the lecture notes for help setting up your environment & downloading the course’s framework code.
+ 
+Execute SupportCode\Framework-1-GettingStarted.py in your python environment. Explore the code a bit too.
+
+HAND IN:
+
+1 point --
+
+The accuracy of the ‘ModelMostCommon’ model when trained on the training data and evaluated on the validation data.

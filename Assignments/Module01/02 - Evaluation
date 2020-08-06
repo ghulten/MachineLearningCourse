@@ -1,4 +1,5 @@
-Open MLProjectSupport\SMSSpam\Framework-2-Evaluations.py. Finish implementing the EvaluateBinaryClassification methods that are referenced from the framework.
+Open SupportCode\Framework-2-Evaluations.py. Finish implementing the EvaluateBinaryClassification 
+  methods that are referenced from the framework.
 
 These are methods of the form: Precision(y, yPredicted) -> float
 
@@ -10,7 +11,7 @@ The full list of evaluations to implement includes:
 •	False positive rate
 •	False negative rate
 
-You can find the definitions of all of these in the reading from Hulten chapter 19.
+You can find the definitions of all of these in the course readings from Hulten chapter 19 (pp 225 - 229).
 
 HAND IN:
 
@@ -22,7 +23,3 @@ Your completed EvaluateBinaryClassification.py file. Keep it clear & simple! If 
 
 A table showing the output of all of these evaluation methods for the spam domain with the most common model and the heuristic
 model from the framework code (fit the models on the training data and evaluate them on the validation data).
-
-RESOURCES - 
-
-Hulten ch 19 (pp 225 - 229) contains definitions that will help.

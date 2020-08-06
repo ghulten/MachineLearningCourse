@@ -1,11 +1,11 @@
-import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamSupport as SMSSpamSupport
+import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamSupport
 
 kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
 
 (xRaw, yRaw) = SMSSpamSupport.LoadRawData(kDataPath)
 
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
-import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamFeaturize as SMSSpamFeaturize
+import MachineLearningCourse.Assignments.Module01.SupportCode.SMSSpamFeaturize as SMSSpamFeaturize
 import MachineLearningCourse.MLUtilities.Learners.LogisticRegression as LogisticRegression
 import MachineLearningCourse.MLUtilities.Learners.MostCommonClassModel as MostCommonClassModel
 import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification

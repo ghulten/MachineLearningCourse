@@ -33,8 +33,7 @@ def OutputSubmission(path, IDs, predictions):
     kNumberExamplesExpected = 100
 
     if len(IDs) != kNumberExamplesExpected or len(predictions) != kNumberExamplesExpected:
-        print("Incorrect number of IDs or predictions. Expected %d." % (kNumberExamplesExpected))
-        return
+        raise UserWarning("Incorrect number of IDs or predictions. Expected %d." % (kNumberExamplesExpected))
 
     f = open(path, 'w')
     f.write("ID,<0/1>\n")
