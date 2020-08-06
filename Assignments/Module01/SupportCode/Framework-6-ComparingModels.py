@@ -1,8 +1,8 @@
-import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamSupport
+import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamDataset
 
 kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
 
-(xRaw, yRaw) = SMSSpamSupport.LoadRawData(kDataPath)
+(xRaw, yRaw) = SMSSpamDataset.LoadRawData(kDataPath)
 
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 import MachineLearningCourse.Assignments.Module01.SupportCode.SMSSpamFeaturize as SMSSpamFeaturize

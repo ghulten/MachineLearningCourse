@@ -1,10 +1,10 @@
 kOutputDirectory = "C:\\temp\\visualize"
 
-import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamSupport
+import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamDataset
 
 kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
 
-(xRaw, yRaw) = SMSSpamSupport.LoadRawData(kDataPath)
+(xRaw, yRaw) = SMSSpamDataset.LoadRawData(kDataPath)
 
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 (xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = Sample.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)

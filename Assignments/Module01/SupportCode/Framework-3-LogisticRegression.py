@@ -32,14 +32,14 @@ if runUnitTest:
 # Once your LogisticRegression learner seems to be working, set this flag to True and try it on the spam data
 runSMSSpam  = False
 if runSMSSpam:
-    import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamSupport
+    import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamDataset
 
     ############################
     # Set up the data
 
     kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
 
-    (xRaw, yRaw) = SMSSpamSupport.LoadRawData(kDataPath)
+    (xRaw, yRaw) = SMSSpamDataset.LoadRawData(kDataPath)
     
     import MachineLearningCourse.MLUtilities.Data.Sample as Sample
     (xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = Sample.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)
