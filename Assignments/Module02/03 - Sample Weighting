@@ -1,0 +1,12 @@
+Add sample weighting to your decision tree code. SupportCode\Framework-3-SampleWeighting.py has some
+  tests that may help.
+
+
+1) in the entropy calculation
+2) in the weighting across partitions when computing information gain
+3) when spliting data into subsets, also split the weights
+4) in predicting, each sample in the leaf vote is scaled by its weight
+
+
+There is nothing to hand in here, but if you don't carefully check your work you will have 
+ are really tough time with the next assignment, boosting.

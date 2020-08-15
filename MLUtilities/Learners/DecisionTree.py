@@ -2,7 +2,11 @@ import collections
 import math
 import time
 
-def findBestSplitOnFeature(x, y, featureIndex):
+def Entropy(y):
+    print("Stub Entropy in ", __file__)
+    return 0.0
+
+def FindBestSplitOnFeature(x, y, featureIndex):
     if len(y) < 2:
         # there aren't enough samples so there is no split to make
         return None
@@ -49,11 +53,11 @@ class TreeNode(object):
         print("Stub growTree in ", __file__)
         
 
-    def predict(self,x,classificationThreshold=0.5):
-        # Remember to find the correct leaf then use an m-estimate to smooth the probability 
-        #  before applying the threshold: (#_with_label_1 + 1) / (#_at_leaf + 2)
+    def predictProbability(self,x):
+        # Remember to find the correct leaf then use an m-estimate to smooth the probability:
+        #  (#_with_label_1 + 1) / (#_at_leaf + 2)
         
-        print("Stub predict in ", __file__)
+        print("Stub predictProbability in ", __file__)
 
     
     def visualize(self, depth=1):
@@ -106,14 +110,16 @@ class DecisionTree(object):
         if verbose:
             print("Decision Tree completed with %d nodes (%.2f seconds) -- %d features. Hyperparameters: maxDepth=%d." % (self.countNodes(), runtime, len(x[0]), maxDepth))
 
-
-    def predict(self, x, classificationThreshold=0.5):
+    def predictProbabilities(self, x):
         y = []
 
         for example in x:
-            y.append(self.treeNode.predict(example, classificationThreshold))
-
+            y.append(self.treeNode.predictProbability(example))        
+            
         return y
+
+    def predict(self, x, classificationThreshold=0.5):
+        return [ 1 if probability >= classificationThreshold else 0 for probability in self.predictProbabiliites(x) ]
 
     def visualize(self):
         self.treeNode.visualize()
