@@ -1,12 +1,35 @@
-Add sample weighting to your decision tree code. SupportCode\Framework-3-SampleWeighting.py has some
-  tests that may help.
+Create a DecisionTreeWeighted learner that functions exactly as your DecisionTree learner, but supports sample weights.
+
+e.g.
+
+    model = DecisionTreeWeighted.DecisionTreeWeighted()
+    model.fit(xTrain, yTrain, weights = [ 10 if y == 1 else 0.1 for y in yTrain ], maxDepth = 5)
+
+SupportCode\Framework-3-SampleWeighting.py has some example tests that may help.
 
 
-1) in the entropy calculation
-2) in the weighting across partitions when computing information gain
-3) when spliting data into subsets, also split the weights
-4) in predicting, each sample in the leaf vote is scaled by its weight
+Here are some things to consider when adding sample weighting:
+ 1) in the entropy calculation, p is the fraction of the weight with the value (not the fraction of samples)
+ 2) in the weighting across partitions when computing information gain
+ 3) when spliting data into subsets for recursion, also split the weights and pass them along appropriately
+ 4) in predicting, each sample in the leaf's vote is scaled by its weight
 
+NOTE: If you implement your numeric attributes or weighting very poorly you will be in trouble wrt
+     runtime for tuning in later assignments.
 
-There is nothing to hand in here, but if you don't carefully check your work you will have 
- are really tough time with the next assignment, boosting.
+Some hints:
+
+    1) You can't afford to do full passes over the data to evaluate each potential splitting threshold
+        - sort the samples by the feature, and iterate across possible thresholds from lowest to highest
+        - incrementally update the distrubtion of y values above and below the threshold as you iterate
+    2) Floating point numbers can be unstable. Don't assume a test for 'count == 0.0' will do the right thing
+        - e.g. as you're incrementally updating the distributions...
+        - e.g. as you're checking for termination
+
+Hand in:
+
+3 points - an ROC curve comparing a decision tree using the best hyperparameters you found in the previous assignment with a weighted
+    decision tree using the same hyperparameters, but a sample weight of: 10 when the age is < 45 (x[0] is the age feature) and 1 when y = 0.
+    Train both on the training set (no cross validation) and evaluate them on the validation data.
+    
+1 point - In 3-4 sentences, describe a condition when you might like to use this sample weighting with the Adult data set.

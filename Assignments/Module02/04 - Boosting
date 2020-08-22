@@ -1,0 +1,26 @@
+Implement boosting with trees as base models.
+
+SupportCode\Framework-4-Boosting.py contains code to help visulaize your algorithm as you debug.
+
+Support parameters for:
+    1) rounds - the maximum number of base models to use (rounds of boosting)
+    2) maxDepth - the maximum depth for any of the trees in the ensemble
+
+When predicting, sum the weight of beta for the models that vote 1 and sum it separately for the
+    models that vote 0. Then P(1) = the fraction of 'beta-weight' that voted for 1.
+
+
+HAND IN:
+2 points - your boosting code. Make sure it is clear and the TA can find the key componets:
+        * weight updating
+        * calculating beta
+        * predicting
+
+1 point - A plot showing test set accuracy (with bounds) on the synthetic concept provided in the framework.
+        On the x-axis show various values of 'rounds' from 1 through some number where there is diminishing return.
+        Include at least 5 values of 'rounds'. Make them interesting. Label everything correctly.
+        Use maxDepth = 1.
+
+1 point - A visualization of the most accurate model you learned on the synthetic concept (the best value of rounds).
+
+        Use: visualize.PlotBinaryConcept(model)

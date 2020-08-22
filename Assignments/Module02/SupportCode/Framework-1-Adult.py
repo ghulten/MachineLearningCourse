@@ -1,4 +1,4 @@
-kOutputDirectory = "C:\\Users\\ghult\\Desktop\\visualize"
+kOutputDirectory = "C:\\temp\\visualize"
 
 import MachineLearningCourse.MLProjectSupport.Adult.AdultDataset as AdultDataset
 

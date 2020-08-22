@@ -11,9 +11,8 @@ def FindBestSplitOnFeature(x, y, featureIndex):
         # there aren't enough samples so there is no split to make
         return None
 
-    ### Do more tests to make sure you haven't hit a terminal case (?)
-    print("Stub FindBestSplitOnFeature in ", __file__)
-    
+    ### Do more tests to make sure you haven't hit a terminal case...
+        
     # HINT here is how to get an array that has indexes into the data (x, y) arrays in sorded 
     # order based on the value of the feature at featureIndex
     indexesInSortedOrder = sorted(range(len(x)), key = lambda i : x[i][featureIndex])
@@ -21,7 +20,9 @@ def FindBestSplitOnFeature(x, y, featureIndex):
     # so x[indexesInSortedOrder[0]] will be the training sample with the smalles value of 'featureIndex'
     # and y[indexesInSortedOrder[0]] will be the associated label
 
-    # HINT: might like to return the partitioned data and the 
+    print("Stub FindBestSplitOnFeature in ", __file__)
+
+    # HINT: might like to return the partitioned data and the
     #  entropy after partitioning based on the threshold
     return (bestThreshold, splitData, entropyAfterSplit)
 
@@ -47,7 +48,7 @@ class TreeNode(object):
             self.labelDistribution[label] += 1
 
     def growTree(self, maxDepth):
-        if self.depth = maxDepth:
+        if self.depth == maxDepth:
             return
 
         print("Stub growTree in ", __file__)
@@ -88,13 +89,12 @@ class TreeNode(object):
             return 1 + self.children[0].countNodes() + self.children[1].countNodes()
 
 class DecisionTree(object):
-    """Framework code for decision tree learning."""
+    """Wrapper class for decision tree learning."""
 
     def __init__(self):
         pass
 
     def fit(self, x, y, maxDepth = 10000, verbose=True):
-        self.minToSplit = minToSplit
         self.maxDepth = maxDepth
         
         startTime = time.time()

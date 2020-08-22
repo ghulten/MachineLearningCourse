@@ -1,0 +1,17 @@
+Explore the three learning algorithms we've produced to understand which hyperparameters
+ (and what ranges of their values) lead to bias errors and which lead to variance errors on 
+ the Adult data set.
+
+To do this, create plots showing training and validation set errors (no cross validation) on the y-axis and
+ various values of the hyperparameter you are exploring on the x-axis.
+
+ Handin:
+
+For each of the following produce a chart and a ~2 sentence analysis of where there is underfitting and overfitting occuring.
+  Make sure to compare across algorithms when identifying bias and variance issues.
+
+ 1 Point - A chart exploring maxDepth for decision trees
+
+ 1 Point - A chart exploring the rounds hyperparamter in BoostedTrees with maxDepth set to 1.
+
+ 1 Point - A chart exploring the stepSize in logistic regression

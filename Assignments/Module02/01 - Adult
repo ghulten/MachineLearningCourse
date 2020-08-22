@@ -1,22 +1,22 @@
 Load the supporting code: SupportCode\Framwork-1-Adult.py
 
 Inspect the data a little bit. Skim the Featurize code - this data set has categorical
- and numeric features. The code uses 'one-hot' encoding to turn the categorical features into binary
+ and numeric features. The supplied featurizing code uses 'one-hot' encoding to turn the categorical features into binary
  features.
 
-Adapt the code you used to tune your SMS Spam model in Module01. Do a quick tuning run on the adult data using just the
- categorical features (not the numeric ones):
+Adapt the code you used to tune your SMS Spam model in Module01. Do a quick tuning run on the adult data using
+ logistic regression and just the categorical features (not the numeric ones), e.g. call the featurizer with these arguments:
    
     featurizer.CreateFeatureSet(xTrainRaw, yTrain, useCategoricalFeatures = True, useNumericFeatures = False)
 
-1) There are only two parameters to tune at this point (stepSize and convergence)
+1) There are only two parameters to tune with logistic regression (stepSize and convergence)
 2) Don't do extensive search, just a quick sweep over the two hyperparameters to get oriented
 
 Get familar with the code you wrote to do the sweeps -- you'll use variations of it a few more times.
 
 HAND IN - 
 
-1 point   - A figure for each hyperparameter showing the cross validation accuracy on y (with 50% 2-sided error bars) and the parameter value on x.
+1 point   - A figure for each hyperparameter showing the cross validation accuracy on the y axis (with 50% 2-sided error bars) and the parameter value on x.
 0.5 point - A few sentences describing the best hyperparameter setting you found and the estimated accuracy range. Is your model
                 better than predicting the most common class? How much? (be precise)
 

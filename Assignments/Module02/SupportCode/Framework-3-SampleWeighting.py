@@ -1,6 +1,7 @@
 import MachineLearningCourse.MLUtilities.Learners.DecisionTreeWeighted as DecisionTreeWeighted
 
-# some sample tests. You may not have implemented the same way, so you might have to adapt.
+# some sample tests that call into helper functions in the DecisionTree module. 
+#   You may not have implemented the same way, so you might have to adapt these tests.
 
 WeightedEntropyUnitTest = True
 if WeightedEntropyUnitTest:
@@ -53,5 +54,23 @@ if WeightTreeUnitTest:
     model.fit(xTrain, yTrain, weights=[ 1 if y == 0 else 0.1 for y in yTrain ], maxDepth = 1)
 
     model.visualize()
+
+
+import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
+# A helper function for calculating FN rate and FP rate across a range of thresholds
+def TabulateModelPerformanceForROC(model, xValidate, yValidate):
+   pointsToEvaluate = 100
+   thresholds = [ x / float(pointsToEvaluate) for x in range(pointsToEvaluate + 1)]
+   FPRs = []
+   FNRs = []
+
+   try:
+      for threshold in thresholds:
+         FPRs.append(EvaluateBinaryClassification.FalsePositiveRate(yValidate, model.predict(xValidate, classificationThreshold=threshold)))
+         FNRs.append(EvaluateBinaryClassification.FalseNegativeRate(yValidate, model.predict(xValidate, classificationThreshold=threshold)))
+   except NotImplementedError:
+      raise UserWarning("The 'model' parameter must have a 'predict' method that supports using a 'classificationThreshold' parameter with range [ 0 - 1.0 ] to create classifications.")
+
+   return (FPRs, FNRs, thresholds)
 
 

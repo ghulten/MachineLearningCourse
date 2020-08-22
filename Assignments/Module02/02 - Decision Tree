@@ -1,40 +1,46 @@
-Implement decision tree learning with the 'maxDepth' hyperparameter.
+Implement decision tree learning with the 'maxDepth' hyperparameter. Use SupportCode/Framework-2-DecisionTree.py to help.
+  Also note there is additional support in MLUtilities/Learners/DecisionTree.py.
 
-import DecisionTree
-model = DecisionTree.DecisionTree()
-model.fit(x, y, maxDepth = 5)
-yValidatePredicted = model.predict(xValidate)
+e.g.:
 
-This is a recursive algorithm that finds the best feature and threshold to split the training data (according to infromation gain)
- then it partitions the data and calls itself recursively.
+ import DecisionTree
+ model = DecisionTree.DecisionTree()
+ model.fit(xTrain, yTrain, maxDepth = 5)
+ yValidatePredicted = model.predict(xValidate)
 
-Recall that Information Gain is:
+The decision tree algorithm considers splitting the data by all possible features and threshold values. It chooses the best according to infromation gain.
+ It partitions the data based on this and calls itself recursively on the partitioned data sets. At the end it produces a tree that contains tests in its
+ interior nodes and predictions at its leaves.
+
+Recall that Information Gain achieved by splitting on feature i with threshold t is:
    
-   H(node_data) - sum_i p(feature has i) * H(node_data where feature has i)
+   Entropy(data) - [ p(i >= t) * Entropy(data where i >= t) +  p(i < t) * Entropy(data where i < t) ]
 
-And H (entropy) is:
+And Entropy(data) is:
    
-   sum_y - p(node_data has label y) * log(p(node_data has label y))
+   p(data has label 1) * log(p(data has label 1)) + p(dat has label 0) * log(p(data has label 0))
 
-Do not split (and recur) if information gain is 0.
+The terminal condition for the recursion occurs:
+   If information gain of every possible split is 0.
+   Upon reaching maxDepth
 
 You only need to support numeric input features (as they will work with binary, 0 - 1 features naturally).
 
-To find the splitting threshold for a numeric feature you must:
-    1) sort the training data by the feature you are considering (keeping x and y in sync while sorting)
-    2) evaluate a potential split between every pair of training examples where the target feature's value changes
-        * choose the splitting threshold value half way between the consecutive example's target feature's values
-        * e.g. if a features sorted values are [ 1, 1, 4, 4 ] you would consider the threshold of 2.5 [ because that's mid way between 1 and 4 ]
+To find the splitting threshold for a numeric feature, i, you must:
+    1) sort the training data by the values of i (keeping x and y in sync while sorting)
+    2) evaluate a potential split between every pair of training examples where i value changes
+        * choose the splitting threshold value half way between consecutive values of i
+        * e.g. if a feature's sorted values are [ 1, 1, 4, 4 ] you would consider the threshold of 2.5 [ because that's mid way between 1 and 4 ]
 
 
 Hand in
 
 2 Points - Your implementation: DecisionTree.py. Make sure it's very easy for the TA to find the critical parts of the code:
-            such as the core recursion logic, the maxDepth, the entropy calculation, the split threshold.
+            such as the core recursion logic, the maxDepth, the entropy calculation, the selection of the split feature & threshold.
 
-4 points - Tune maxDepth with and without numeric features:
+4 points - Tune maxDepth on the adult data set with and without numeric features:
         
             featurizer.CreateFeatureSet(xTrainRaw, yTrain, useCategoricalFeatures = True, useNumericFeatures = True)
 
             Create a short (~3-4 figures and 200 words) writeup of what you learned from the tuning runs. 
-            Include all the usual elements (bounds, parameter sweeps, ROC curves). Are the numeric features worth using?
+            Include all the usual elements (bounds, parameter sweeps, ROC curves). Is it better to use the numeric features or not? (Be precise)
