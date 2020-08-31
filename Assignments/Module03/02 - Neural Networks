@@ -1,0 +1,63 @@
+
+Open SupportCode\Framework-2-NeuralNetwork.py and implement learning of fully connected neural networks
+   with an input layer, N hidden layers of variable size, and an output layer with a single output using
+   the Backpropagation algorithm as described in Mitchell (with stochastic gradient descent).
+
+The implementation should be roughly:
+    For each epoch:
+        For each training sample:
+            Pass the sample through the network to get activations
+            Propagate error from output layer back through the network
+            Update all the weights
+
+[ Hint: have one structure for all the weights in the network, a parallel one for activations, and a parallel one for errors ]
+
+Your implementation should support:
+
+  * A N fully connected variable size followed by an output layer, all with sigmoid activation.
+  * Incremental stocastic gradient descent: run an epoch, stop and measure, then run another, etc.
+  * Hyperparameters of:
+    - stepSize, for the size of the weight updtate to do with each step of stocastic gradient descent
+    - convergence, which indicates the minimum loss improvemnt per epoch in *training set* loss before convergence
+    - hiddenLayersNodeCounts, a list with one int per hidden layer indicating the number of nodes in that layer, 
+        e.g. a network with two hidden layers with 10 nodes if the first and 5 in the second would have: 
+          hiddenLayersNodeCounts = [ 10, 5 ] 
+  * A single output with log loss as the loss function
+
+
+Initialize your weights of all the network's parameters to small random initial values using:
+
+    stdv = 1. / math.sqrt(inputsToThisLayer + 1)
+    layer.append( [ random.uniform(-stdv, stdv) for inputID in range(inputsToThisLayer + 1) ] )
+
+    # Remember to initialize the bias weight too, that is: 'inputsToThisLayer + 1'
+
+
+Demonstrate your model works by training on the blink data set. Use the intensity features, which take the
+    raw pixel values, sample them down and convert them to a 0 - 1 range:
+
+    sampleStride = 2 # used to downsample the image
+    featurizer.CreateFeatureSet(xTrainRaw, yTrain, includeEdgeFeatures=False, includeIntensities=True, intensitiesSampleStride=sampleStride)
+
+Hand in:
+
+2 point - your source code for neural network training. Make us it's easy for the TA to find the key components: forward propagaion, backward propagaion, weight updates, loss calculation.
+
+A report containing:
+
+1 Point - A visualiztion of the weights you learn for the neurons in the hidden layer of your tuned single-hidden-layer network using the framework function 'VisualizeWeights'
+    Which takes as input:
+        * An array of the learned weights where element 0 is the bias, and the remaining elements are the (24 / sampleStride)^2 weight values.
+        * The path to write the file to (should end in .jpg)
+        * The stride value you pased to the featurizer via 'intensitiesSampleStride' (by default the framework uses 2)
+
+For the following, we are trying to find reasonable values and demonstrate the training algorithm is working, so you can skip on cross validation and error bars...
+
+2 points - Tune the parameters until you have a single layer network with validation set accuracy greater than 85%. Report on the parameters you used. Include a chart
+    with training and validation set loss on the y-axis vs epoch nuber on the x-axis. In 1-2 sentences indicate the approach you took to finding hyperparameters that work.
+    Include a brief log of the Hyperparameters you tried.
+
+2 points - Tune the parameters until you have a two layer network with validation set accuracy greater than 89%. Report on the parameters you used. Include a chart
+    with training and validation set loss on the y-axis vs epoch nuber on the x-axis. In 1-2 sentences indicate the approach you took to finding hyperparameters that work.
+    Include a brief log of the Hyperparameters you tried.
+

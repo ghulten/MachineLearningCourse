@@ -1,0 +1,28 @@
+Open SupportCode/Framework-1-Blink.py
+
+Check out the featurizer code. It has the ability to return raw pixels, normalized (and downsampled) pixels (as intensities)
+ and it can also add some hand-crafted features -- right now just the average response of a sobel edge detector in the X and Y 
+ directions.
+
+Using just the edge features:
+
+    featurizer = BlinkFeaturize.BlinkFeaturize()
+    featurizer.CreateFeatureSet(xTrainRaw, yTrain, includeEdgeFeatures=True)
+
+Tune hyperparameters with your boosted tree implementation.
+
+Now create more features as follows: divide the image into a 3 x 3 grid and for each grid location include
+    a feature for the max and average magnitue of response to the sobel edge filter in both the x and y directions.
+
+    NOTE: the response to sobel can be positive or negative. Be sure to use the magnitue or response, not the raw value.
+
+Tune hyperparameters with boosted trees on the new features.
+
+HAND IN:
+
+4 points - A short writeup using precise technical terms describe if the new features improved validation-set
+    accuracy. No more than 4 charts and ~200 words. Make sure to include:
+    * error bounds,
+    * hyperparameter tuning visualization,
+    * training vs validation accuracy (and some bias variance discussion),
+    * ROC with and without the features.

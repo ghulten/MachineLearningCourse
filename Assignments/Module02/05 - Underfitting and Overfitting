@@ -8,10 +8,12 @@ To do this, create plots showing training and validation set errors (no cross va
  Handin:
 
 For each of the following produce a chart and a ~2 sentence analysis of where there is underfitting and overfitting occuring.
-  Make sure to compare across algorithms when identifying bias and variance issues.
+  
 
- 1 Point - A chart exploring maxDepth for decision trees
+ 0.5 Point - A chart exploring maxDepth for decision trees (maxDepth on x-axis, train and validation accuracy on y-axis).
 
- 1 Point - A chart exploring the rounds hyperparamter in BoostedTrees with maxDepth set to 1.
+ 0.5 Point - A chart exploring the rounds hyperparamter in BoostedTrees with maxDepth set to 1.
 
- 1 Point - A chart exploring the stepSize in logistic regression
+ 0.5 Point - A chart exploring the stepSize in logistic regression with convergence set to 0.0001.
+
+ 2 Points - A 3-5 senctence summary across the algorithms of the bias and variance issues you discovered with this experiment.

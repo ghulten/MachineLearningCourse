@@ -1,0 +1,4 @@
+Implement a single convolutional layer at the beginning of the fully connected network
+
+support any number of square filters
+
