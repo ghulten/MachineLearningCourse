@@ -45,7 +45,7 @@ Hand in:
 
 A report containing:
 
-1 Point - A visualiztion of the weights you learn for the neurons in the hidden layer of your tuned single-hidden-layer network using the framework function 'VisualizeWeights'
+1 point - A visualiztion of the weights you learn for the neurons in the hidden layer of your tuned single-hidden-layer network using the framework function 'VisualizeWeights'
     Which takes as input:
         * An array of the learned weights where element 0 is the bias, and the remaining elements are the (24 / sampleStride)^2 weight values.
         * The path to write the file to (should end in .jpg)

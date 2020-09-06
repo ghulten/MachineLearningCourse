@@ -1,0 +1,24 @@
+Install the gym toolkit for evaluating reinforcement learning algorithms https://gym.openai.com/docs/
+
+Open SupportCode\Framework-1-CartPole.py
+
+Implement Q-learning as described in Mitchell chapter 13. Represent Q^ with tables.
+Use formulas 13.10 and 13.11 to update Q^.
+Support an experimentation strategy that:
+    * Uses the formula in section 13.3.5 to decide which action to take P(a_i | s). Support the parameter k to modify this expression (k=e is a good start; also consider values in the range 1.01 - 1.5).
+    * Add an additional parameter called randomActionRate, which overrides and takes a totally random action (e.g. if this is 0.02 then take a random exploration action 2% of the time).
+    * Also support a ‘learningMode=False’ option that unconditionally takes the best action so you can run your best policy against the simulator and see how well you've learned.
+ 
+In summary, you should support these parameters:
+    * discountRate = ... # Controls the discount rate for future rewards -- this is gamma from 13.10
+    * randomActionRate = ... # Percent of time the next action selected by GetAction is totally random
+    * actionProbabilityBase = ... # This is k from the P(a_i|s) expression from section 13.3.5 and influences how random exploration is
+    * learningRateScale = ... # Should be multiplied by visits_n from 13.11
+ 
+
+Hand in:
+
+2 points -- Your implementation of QLearning.py. Make sure it's easy for the TA to follow.
+
+4 points -- A writeup of your process for tuning the parameters. Include one chart per parameter with parameter value on the x-axis and policy quality on y-axis (average score on 20 runs).
+    For each step be sure to indicate the other parameter value you used (tuned or untuned). Include a final parameter setting and the average score it produced across 100 runs.
