@@ -55,12 +55,15 @@ def __GetLineColor(index):
    
    return colors[index % len(colors)]
 
-def __GetMarker(index):
+def __GetMarker(index, useMarkers):
    markers = ['x', 'o', '+', '*', 's']
    
-   return markers[index % len(markers)]
+   if useMarkers:
+      return markers[index % len(markers)]
+   else:
+      return None
 
-def PlotSeries(seriesData, seriesLabels, xAxisPoints, useLines=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, outputDirectory=None, fileName=None):
+def PlotSeries(seriesData, seriesLabels, xAxisPoints, useLines=True, useMarkers=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, outputDirectory=None, fileName=None):
    if len(seriesData) != len(seriesLabels):
       raise UserWarning("Mismatched number of seriesData and seriesLabels")
    
@@ -71,7 +74,7 @@ def PlotSeries(seriesData, seriesLabels, xAxisPoints, useLines=True, chartTitle=
    fig, ax =__SetUpChart(chartTitle, xAxisTitle, yAxisTitle)
    
    for i in range(len(seriesData)):
-      ax.plot(xAxisPoints, seriesData[i], marker= __GetMarker(i), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
+      ax.plot(xAxisPoints, seriesData[i], marker= __GetMarker(i, useMarkers), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
               
    __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
 

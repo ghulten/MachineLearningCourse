@@ -1,0 +1,15 @@
+Install PyTorch (HERE) and open SupportCode/Framework-3-PyTorch.py 
+
+Run the framework. Update the sample neural network to implement the two layer version of the network you tuned in the 
+ previous assignment and tune it to give similar results.
+
+Compare the PyTorch version to the version you implemented.
+
+Hand In:
+
+1 Point -- Your updated BlinkNeuralNetwork.py file.
+
+3 Point -- Two charts and less than two hundred words describing your comparison. Did the models
+    converge similarly? Did they generalize similarly? What differences remain between the implementations?
+    How much does randomization affect the PyTorch run (vs you implementation where the framework set
+    a seed)?
