@@ -20,5 +20,5 @@ Hand in:
 
 2 points -- Your implementation of QLearning.py. Make sure it's easy for the TA to follow.
 
-4 points -- A writeup of your process for tuning the parameters. Include one chart per parameter with parameter value on the x-axis and policy quality on y-axis (average score on 20 runs).
+5 points -- A writeup of your process for tuning the parameters. Include one chart per parameter with parameter value on the x-axis and policy quality on y-axis (average score on 20 runs).
     For each step be sure to indicate the other parameter value you used (tuned or untuned). Include a final parameter setting and the average score it produced across 100 runs.
