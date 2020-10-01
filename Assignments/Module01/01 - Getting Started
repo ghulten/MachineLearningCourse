@@ -12,7 +12,7 @@ Python is widely used in machine learning and data science to process, prepare, 
 
 I provide python framework code to get you started on the assignments, deal with data loading, etc.
  
-Look in the lecture notes for help setting up your environment & downloading the course’s framework code.
+Look in the GettingStarted documentation (MachineLearningCourse/GettingStarted.pdf) for help setting up your environment & downloading the course’s framework code.
  
 Execute SupportCode\Framework-1-GettingStarted.py in your python environment. Explore the code a bit too.
 
