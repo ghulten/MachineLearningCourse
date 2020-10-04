@@ -4,7 +4,9 @@
 import collections
 import os
 
-def LoadRawData(path):
+kDataPath = os.path.join("MachineLearningCourse", "MLProjectSupport", "Adult", "dataset", "adult.data")
+
+def LoadRawData(path=kDataPath):
     print("Loading data from: %s" % os.path.abspath(path))
     f = open(path, 'r')
     

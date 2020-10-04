@@ -2,10 +2,7 @@ kOutputDirectory = "C:\\temp\\visualize"
 
 import MachineLearningCourse.MLProjectSupport.Adult.AdultDataset as AdultDataset
 
-### UPDATE this path for your environment
-kDataPath = "MachineLearningCourse\\MLProjectSupport\\Adult\\dataset\\adult.data"
-
-(xRaw, yRaw) = AdultDataset.LoadRawData(kDataPath)
+(xRaw, yRaw) = AdultDataset.LoadRawData()
 
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 

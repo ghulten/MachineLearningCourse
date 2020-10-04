@@ -2,8 +2,9 @@ import collections
 import os
 import random
 
+kDataPath = os.path.join("MachineLearningCourse", "MLProjectSupport", "Blink", "dataset")
 
-def LoadRawData(path, includeLeftEye = True, includeRightEye = True, shuffle=True):
+def LoadRawData(path=kDataPath, includeLeftEye = True, includeRightEye = True, shuffle=True):
     xRaw = []
     yRaw = []
     
