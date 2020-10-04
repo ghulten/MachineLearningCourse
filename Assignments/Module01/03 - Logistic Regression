@@ -43,3 +43,5 @@ RESOURCES:
 The best way to get info on the elements you'll need to implement is to review the course slides for this lecture, which you can find on this page: https://intelligentsystem.io/course.html
 
 [ Direct link: https://intelligentsystem.io/course/lectures/04%20--%20Logistic%20Regression.pptx ]
+
+For plotting resources, check out the MatPlotLib tutorials: https://matplotlib.org/3.3.1/tutorials/index.html

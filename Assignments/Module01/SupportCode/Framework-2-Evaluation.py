@@ -11,7 +11,7 @@ import MachineLearningCourse.Assignments.Module01.SupportCode.SMSSpamFeaturize a
 # Create an instance of the featurizer, and tell it to use some hand-crafted code we created to produce features.
 featurizer = SMSSpamFeaturize.SMSSpamFeaturize(useHandCraftedFeatures=True)
 
-# We'll also create a vocabulary and use the presence or abscence of specific words in the feature vector.
+# We'll also create a vocabulary and use the presence or absence of specific words in the feature vector.
 
 #  In a later assignment, you'll update 'CreateVocabulary' to select the vocabulary automatically. For 
 #   now, just add in a few 'spammy' (?) words by hand.

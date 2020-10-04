@@ -50,7 +50,7 @@ HAND IN a short report showing:
 1.0 points - The final plot you produce in step 4, showing how validation accuracy improves throughout the entire optimization run.
 1.0 points - The final hyperparameters you learned.
 1.0 points - The ROC plot you produced on the test set (comparing your best model to the initial model).
-1.0 points - A short analysis of how the initial model relatest to the optimized model, including confidence intervals and performance at low false positive rates.
+1.0 points - A short analysis of how the initial model relates to the optimized model, including confidence intervals and performance at low false positive rates.
 
 Tips for approaching this assignment:
     - You probably want to use joblib to run your evaluations in parallel (sample in framework code)
@@ -61,3 +61,4 @@ Tips for approaching this assignment:
         * It's okay to limit your parameter sweeps trying values that take 'reasonable time' on your machine (less than ~30 minutes)
         * If all your code is working correctly, you'll be able to find highly accurate models, even with that constraint
     - Consider outputting all the results you need as you go & making it possible to restart (manually at least) - if you don't plan and something crashes...you'll be sad...
+       * If you're still scared about things crashing, consider writing the output/results of your runs into a file so that you can pick up where it left off
