@@ -29,7 +29,7 @@ for each setting of the convergence hyperparameter.
 
 1 Point – 
 
-Describe in 2-3 sentences your interpretation of the output of this hyperparameter sweep. Include a justification for trying more parameters
+Describe in 2-3 sentences your interpretation of the output of this hyperparameter sweep. Include a justification for trying more values of the 'convergence' hyperparameter
   or stopping there. If you do think you should try more parameters, what is the next one you would try?
 
 1 Point – 
