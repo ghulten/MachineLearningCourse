@@ -11,5 +11,5 @@ Hand In:
 
 3 Point -- Two charts and less than two hundred words describing your comparison. Did the models
     converge similarly? Did they generalize similarly? What differences remain between the implementations?
-    How much does randomization affect the PyTorch run (vs you implementation where the framework set
+    How much does randomization affect the PyTorch run (vs your implementation where the framework set
     a seed)?
