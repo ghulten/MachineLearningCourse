@@ -6,7 +6,7 @@ Produce the most accurate SMS Spam filtering model you can using the code you've
 WARNING! This exercise can take a lot of CPU runtime. Plan accordingly. 
   If you try to do this assignemnt on the day before it's due, you'll probably run out of time.
 
-Use 5-fold cross validation on the training set (not validation or test) to carry out the hyperparameter search.
+Use 2-fold cross validation on the training set (not validation or test) to carry out the hyperparameter search (instead of 5-fold in order to keep runtimes down).
 
 Start with the following hyperparameters values:
 
