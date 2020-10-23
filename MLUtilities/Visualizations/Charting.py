@@ -51,7 +51,7 @@ def __GetLineStyle(index, useLines):
    return styles[index % len(styles)]
 
 def __GetLineColor(index):
-   colors = ['0.0', '0.25', '0.5']
+   colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'w']
    
    return colors[index % len(colors)]
 
