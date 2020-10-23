@@ -23,6 +23,6 @@ that is better than both of the models in the framework at both the 50% and the 
 1.0 points - Create an ROC plot showing:
    * the model with 25 features by frequency;
    * the model with 25 features by mutual inforamtion;
-   * and your new model. 
+   * and the model you produced by tuning the hyperparamters in the previous question.
    
    Make sure to label everything clearly!
