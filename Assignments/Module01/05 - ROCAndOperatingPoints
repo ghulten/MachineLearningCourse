@@ -15,7 +15,7 @@ Note - for this assignment you can quantize the thresholds you try to the neares
     What classification threshold would you use with the numFrequentWords = 25 model to achieve a 10% False positive rate?
 
 Tune the hyperperamters 'numMutualInformationWords' and 'numFrequentWords' until you find a new model
-that is better than both of the models in the framework at both the 50% and the 10% false positive rate.
+that is better than both of the models in the framework code at both the 50% and the 10% false positive rate.
 
 1.0 points - In a few sentences, describe the strategy you used to find the better hyperparameters and 
   the hyperperparameters you found to achieve the result?
