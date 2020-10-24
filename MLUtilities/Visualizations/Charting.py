@@ -55,7 +55,7 @@ def __GetLineColor(index):
    
    return colors[index % len(colors)]
 
-def __GetMarker(index, useMarkers):
+def __GetMarker(index, useMarkers=False):
    markers = ['x', 'o', '+', '*', 's']
    
    if useMarkers:
