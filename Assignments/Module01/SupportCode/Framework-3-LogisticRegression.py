@@ -25,7 +25,7 @@ if runUnitTest:
         print(" fit for %d iterations, train set loss is %.4f" % (model.totalGradientDescentSteps, model.loss(xTrain, yTrain)))
 
         # and visualize the model's decision boundary
-        visualization = Visualize2D.Visualize2D(kOutputDirectory, "{0:04}.test".format(model.totalIterations))
+        visualization = Visualize2D.Visualize2D(kOutputDirectory, "{0:04}.test".format(model.totalGradientDescentSteps))
         visualization.Plot2DDataAndBinaryConcept(xTrain, yTrain, model)
         visualization.Save()
         
