@@ -11,7 +11,7 @@ HAND IN:
 
 1 Point --
 
-The visualization of the model learned on the UnitTest using 10 iterations of gradient descent, stepSize=1.0, convergence=0.005
+The visualization of the model learned on the UnitTest using 10 iterations of gradient descent, stepSize=1.0, convergence=0.005. (Not the model weights!)
 
 2 Points –
 
