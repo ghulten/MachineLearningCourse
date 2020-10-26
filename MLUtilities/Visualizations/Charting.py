@@ -78,7 +78,7 @@ def PlotSeries(seriesData, seriesLabels, xAxisPoints, useLines=True, useMarkers=
               
    __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
 
-def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoints, useLines=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, outputDirectory=None, fileName=None):
+def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoints, useLines=True, useMarkers=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, outputDirectory=None, fileName=None):
    if len(seriesData) != len(seriesLabels):
       raise UserWarning("Mismatched number of seriesData and seriesLabels")
    
@@ -96,7 +96,7 @@ def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoin
    fig, ax =__SetUpChart(chartTitle, xAxisTitle, yAxisTitle)
    
    for i in range(len(seriesData)):
-      ax.errorbar(xAxisPoints, seriesData[i], seriesErrorBars[i], marker= __GetMarker(i, True), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
+      ax.errorbar(xAxisPoints, seriesData[i], seriesErrorBars[i], marker= __GetMarker(i, useMarkers), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
               
    __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
 
