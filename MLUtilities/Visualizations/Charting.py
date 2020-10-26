@@ -96,7 +96,7 @@ def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoin
    fig, ax =__SetUpChart(chartTitle, xAxisTitle, yAxisTitle)
    
    for i in range(len(seriesData)):
-      ax.errorbar(xAxisPoints, seriesData[i], seriesErrorBars[i], marker= __GetMarker(i), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
+      ax.errorbar(xAxisPoints, seriesData[i], seriesErrorBars[i], marker= __GetMarker(i, True), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
               
    __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
 
@@ -126,7 +126,7 @@ def PlotTrainValidateTestSeries(trainValues, validationValues, testValues=None, 
    fig, ax = __SetUpChart(chartTitle, xAxisTitle, yAxisTitle)
    
    if xAxisPoints == None:
-      xAxisPoints = [i for i in range(len(train))]
+      xAxisPoints = [i for i in range(len(trainValues))]
    
    trainLine = ax.plot(xAxisPoints, trainValues, color='0.0', marker='x', linestyle='dashed', label="Train")
    validationLine = ax.plot(xAxisPoints, validationValues, color='0.7', marker='o', label="Validation")
