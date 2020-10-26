@@ -82,7 +82,7 @@ def PlotSeries(seriesData, seriesLabels, xAxisPoints, useLines=True, useMarkers=
               
    __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
 
-def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoints, useLines=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, xAxisLogScale=False, outputDirectory=None, fileName=None):
+def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoints, useLines=True, useMarkers=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, xAxisLogScale=False, outputDirectory=None, fileName=None):
    if len(seriesData) != len(seriesLabels):
       raise UserWarning("Mismatched number of seriesData and seriesLabels")
    
@@ -100,7 +100,7 @@ def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoin
    fig, ax =__SetUpChart(chartTitle, xAxisTitle, yAxisTitle, xAxisLogScale)
    
    for i in range(len(seriesData)):
-      ax.errorbar(xAxisPoints, seriesData[i], seriesErrorBars[i], marker= __GetMarker(i), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
+      ax.errorbar(xAxisPoints, seriesData[i], seriesErrorBars[i], marker= __GetMarker(i, useMarkers), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
               
    __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
 
@@ -130,7 +130,7 @@ def PlotTrainValidateTestSeries(trainValues, validationValues, testValues=None, 
    fig, ax = __SetUpChart(chartTitle, xAxisTitle, yAxisTitle)
    
    if xAxisPoints == None:
-      xAxisPoints = [i for i in range(len(train))]
+      xAxisPoints = [i for i in range(len(trainValues))]
    
    trainLine = ax.plot(xAxisPoints, trainValues, color='0.0', marker='x', linestyle='dashed', label="Train")
    validationLine = ax.plot(xAxisPoints, validationValues, color='0.7', marker='o', label="Validation")

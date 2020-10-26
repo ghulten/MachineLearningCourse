@@ -28,8 +28,8 @@ for i in range(10):
     print("%d - " % (yTrain[i]), xTrain[i])
 
 ############################
-import MachineLearningCourseInstructor.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
-import MachineLearningCourseInstructor.MLUtilities.Evaluations.ErrorBounds as ErrorBounds
+import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
+import MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds as ErrorBounds
 import MachineLearningCourse.MLUtilities.Learners.MostCommonClassModel as MostCommonClassModel
 
 model = MostCommonClassModel.MostCommonClassModel()
