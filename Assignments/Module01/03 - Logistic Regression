@@ -11,7 +11,7 @@ HAND IN:
 
 1 Point --
 
-The visualization of the model learned on the UnitTest using 10 iterations of gradient descent, stepSize=1.0, convergence=0.005
+The visualization of the model learned on the UnitTest using 10 iterations of gradient descent, stepSize=1.0, convergence=0.005. (Not the model weights!)
 
 2 Points –
 
@@ -36,7 +36,8 @@ Describe in 2-3 sentences your interpretation of the output of this hyperparamet
 
 Produce a plot showing the training set loss and the validation set loss every 100 steps during the run 
  with the best convergence value you found in the parameter sweep and stepSize of 1.0. In no more than 100
- words describe the difference between the training and validation loss. Which set does the model have better loss on? Why?
+ words describe the difference between the training and validation loss. Turn in the plot and answer the following:
+ Which set does the model have better loss on? Why?
 
 RESOURCES:
 
