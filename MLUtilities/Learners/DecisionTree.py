@@ -119,7 +119,7 @@ class DecisionTree(object):
         return y
 
     def predict(self, x, classificationThreshold=0.5):
-        return [ 1 if probability >= classificationThreshold else 0 for probability in self.predictProbabiliites(x) ]
+        return [ 1 if probability >= classificationThreshold else 0 for probability in self.predictProbabilities(x) ]
 
     def visualize(self):
         self.treeNode.visualize()
