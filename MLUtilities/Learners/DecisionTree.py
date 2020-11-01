@@ -63,7 +63,7 @@ class TreeNode(object):
     
     def visualize(self, depth=1):
         ## Here is a helper function to visualize the tree (if you choose to use the framework class)
-        if self.isLeaf()
+        if self.isLeaf():
             print(self.labelDistribution)
 
         else:
