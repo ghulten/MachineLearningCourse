@@ -63,7 +63,7 @@ class TreeNode(object):
     
     def visualize(self, depth=1):
         ## Here is a helper function to visualize the tree (if you choose to use the framework class)
-        if self.isLeaf()
+        if self.isLeaf():
             print(self.labelDistribution)
 
         else:
@@ -119,7 +119,7 @@ class DecisionTree(object):
         return y
 
     def predict(self, x, classificationThreshold=0.5):
-        return [ 1 if probability >= classificationThreshold else 0 for probability in self.predictProbabiliites(x) ]
+        return [ 1 if probability >= classificationThreshold else 0 for probability in self.predictProbabilities(x) ]
 
     def visualize(self):
         self.treeNode.visualize()
