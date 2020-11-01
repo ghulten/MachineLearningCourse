@@ -29,7 +29,7 @@ Some hints:
 Hand in:
 
 3 points - an ROC curve comparing a decision tree using the best hyperparameters you found in the previous assignment with a weighted
-    decision tree using the same hyperparameters, but a sample weight of: 10 when the age is < 45 (x[0] is the age feature) and 1 when y = 0.
+    decision tree using the same hyperparameters, but a sample weight of: 10 when the age is < 45 (x[0] is the age feature) and 1 when age is >= 45..
     Train both on the training set (no cross validation) and evaluate them on the validation data.
     
 1 point - In 3-4 sentences, describe a condition when you might like to use this sample weighting with the Adult data set.
