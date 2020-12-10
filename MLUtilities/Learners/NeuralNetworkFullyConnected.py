@@ -1,5 +1,6 @@
 import random
 import math
+import time
 
 import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryProbabilityEstimate as EvaluateBinaryProbabilityEstimate
 
@@ -65,8 +66,8 @@ class NeuralNetworkFullyConnected(object):
         self.lastLoss = loss
     
     # Allows you to partially fit, then pause to gather statistics / output intermediate information, then continue fitting
-    def incrementalFit(self, x, y, epochs=1, step=0.01, convergence = None):
-        for _ in range(epochs):
+    def incrementalFit(self, x, y, maxEpochs=1, stepSize=0.01, convergence = None):
+        for _ in range(maxEpochs):
             if self.converged:
                 return
         
