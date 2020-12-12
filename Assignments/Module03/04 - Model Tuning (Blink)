@@ -1,6 +1,7 @@
-Implement a neural network inspired by LeNet for the blink domain and tune it up! Your final
+Implement a neural network inspired by LeNet for the Blink domain and tune it up! Your final
   model should have at least two convolutional layers followed by at least two fully connected layers
-  a batch normalization layer, a droppout layer, and an output layer.
+  a batch normalization layer, a dropout layer, and an output layer. Your new model should generally 
+  be better than the model from the previous assignment. 
 
 There is no framework code.
 
@@ -12,9 +13,12 @@ But here are some code snippets that might help:
 
 Hand in:
 
-2 Points - Your updated BlinkNeuralNetwork.py file. Make sure the TA can easily find the required elements.
+2 Points - Your updated BlinkNeuralNetwork.py file with the aforementioned changes. Make sure the TA can easily find the required elements.
 
 [ OPTIONAL we may do a Kaggle competition for this ]
 
 6 Points - A professional description of your model tuning process. Keep it to ~5 plots and ~1500 words
-    of text. Remember cross-validation, bias / variance, roc curves, & generalization error.
+    of text. Remember to discuss cross-validation, bias / variance, roc curves, & generalization error.
+    Some suggested graphs: 
+    - An ROC curve with the model you started with and the model you ended with after experimenting and tuning hyperparameters. 
+    - How your model improved over different hyperparameters you were tuning. 
