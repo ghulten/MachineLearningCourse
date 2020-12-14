@@ -140,3 +140,8 @@ def PlotTrainValidateTestSeries(trainValues, validationValues, testValues=None, 
          
    __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
 
+def PlotSimpleChart(yAxisPoints, xAxisPoints, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, outputDirectory=None, fileName=None, label=None, xAxisLogScale=False):
+   fig, ax = __SetUpChart(chartTitle, xAxisTitle, yAxisTitle, xAxisLogScale)
+   trainLine = ax.plot(xAxisPoints, yAxisPoints, color='0.0', marker='x', linestyle=__GetLineStyle(0, True), label=label)
+
+   __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
