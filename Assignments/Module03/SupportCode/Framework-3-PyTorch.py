@@ -140,8 +140,8 @@ Charting.PlotSeries([trainLosses, validationLosses], ["Train Loss", "Validate Lo
 # Evaluate the Model
 ##
 
-import MachineLearningCourseInstructor.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
-import MachineLearningCourseInstructor.MLUtilities.Evaluations.ErrorBounds as ErrorBounds
+import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
+import MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds as ErrorBounds
 
 model.train(mode=False)
 yTestPredicted = model(xTest)
