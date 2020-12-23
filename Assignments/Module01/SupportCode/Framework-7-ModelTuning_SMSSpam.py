@@ -21,11 +21,13 @@ def TabulateModelPerformanceForROC(model, xValidate, yValidate):
    thresholds = [ x / float(pointsToEvaluate) for x in range(pointsToEvaluate + 1)]
    FPRs = []
    FNRs = []
+   yPredicted = model.predictProbabilities(xValidate)
 
    try:
       for threshold in thresholds:
-         FPRs.append(EvaluateBinaryClassification.FalsePositiveRate(yValidate, model.predict(xValidate, classificationThreshold=threshold)))
-         FNRs.append(EvaluateBinaryClassification.FalseNegativeRate(yValidate, model.predict(xValidate, classificationThreshold=threshold)))
+        yHats = [ 1 if pred > threshold else 0 for pred in yPredicted ]
+        FPRs.append(EvaluateBinaryClassification.FalsePositiveRate(yValidate, yHats))
+        FNRs.append(EvaluateBinaryClassification.FalseNegativeRate(yValidate, yHats))
    except NotImplementedError:
       raise UserWarning("The 'model' parameter must have a 'predict' method that supports using a 'classificationThreshold' parameter with range [ 0 - 1.0 ] to create classifications.")
 
