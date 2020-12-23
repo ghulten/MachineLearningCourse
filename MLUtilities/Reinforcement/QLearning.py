@@ -7,7 +7,7 @@ class QLearning(object):
         self.stateSpaceShape = stateSpaceShape
         self.discountRate = discountRate
 
-    def GetAction(self, state, learningMode=True, randomActionRate, actionProbabilityBase):
+    def GetAction(self, state, learningMode=True, randomActionRate=0, actionProbabilityBase=0):
         print("Stub GetAction in ", __file__)
         return 0
 

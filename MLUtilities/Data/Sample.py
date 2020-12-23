@@ -24,7 +24,7 @@ def TrainValidateTestSplit(x, y, percentValidate = .1, percentTest = .1):
 
 def BootstrapSample(x, y, limit=None):
     if len(x) != len(y):
-        raise UsesrWaring("x list and y list are different lengths.")
+        raise UserWarning("x list and y list are different lengths.")
     
     if limit == None:
         limit = len(x)

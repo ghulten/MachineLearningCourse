@@ -11,9 +11,9 @@ HAND IN -
     indicate the following elements so the TA can find the required pieces and verify they
     were done correctly.
 
-Include at least one chart shwoing a parameter sweep demonstrating tuning boosted trees.
+Include at least one chart showing a parameter sweep demonstrating tuning boosted trees.
 
-Include an ROC curve of the best verions of logistic regression, decision trees,
+Include an ROC curve of the best versions of logistic regression, decision trees,
      and boosted trees you found when trained on the full training set and evaluated
      on the test data.
 

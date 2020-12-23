@@ -1,12 +1,12 @@
-def CrossValidation(x, y, numberOfFolds, foldIDToSelect):
+def CrossValidation(x, y, numberOfFolds, foldIDForEvaluation):
     if(len(x) != len(y)):
         raise UserWarning("Attempting to split into training and testing set.\n\tx and y arrays do not have the same size. Check your work and try again.")
 
     if(numberOfFolds <= 1 or numberOfFolds > len(y)):
         raise UserWarning("Attempting to split into %d numberOfFolds, must be between 2 and the number of samples.\n." % numberOfFolds)
 
-    if(foldIDToSelect < 0 or foldIDToSelect >= numberOfFolds):
-        raise UserWarning("Attempting to select fold %d, must be 0 - %d." % (foldIDToSelect, numberOfFolds - 1))
+    if(foldIDForEvaluation < 0 or foldIDForEvaluation >= numberOfFolds):
+        raise UserWarning("Attempting to select fold %d for evaluation, must be 0 - %d." % (foldIDForEvaluation, numberOfFolds - 1))
 
     numberPerFold = round(len(y) / numberOfFolds)
 
@@ -16,7 +16,7 @@ def CrossValidation(x, y, numberOfFolds, foldIDToSelect):
     yEvaluate = []
 
     for i in range(numberOfFolds):
-        if i == foldIDToSelect:
+        if i == foldIDForEvaluation:
             xThis = xEvaluate
             yThis = yEvaluate
         else:

@@ -1,5 +1,6 @@
 import random
 import math
+import time
 
 import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryProbabilityEstimate as EvaluateBinaryProbabilityEstimate
 
@@ -35,11 +36,11 @@ class NeuralNetworkFullyConnected(object):
     def backpropagate(self, y):
         print("Stub backpropogate in ", __file__)
 
-    def updateweights(self, step, momentum):
+    def updateweights(self, step):
         print("Stub updateweights in ", __file__)
 
     def loss(self, x, y):        
-        return EvaluateBinaryProbabilityEstimate.LogLoss(y, self.predictProbabilities(x))
+        print("Stub loss in ", __file__)
 
     def predictOneProbability(self, x):
         self.feedForward(x)
@@ -53,7 +54,7 @@ class NeuralNetworkFullyConnected(object):
         return [ self.predictOneProbability(sample) for sample in x ]
 
     def predict(self, x, threshold = 0.5):
-        return [ 1 if probability > threshold else 0 for probability in self.predictProbabilities(x) ]
+        return [ 1 if probability >= threshold else 0 for probability in self.predictProbabilities(x) ]
     
     def __CheckForConvergence(self, x, y, convergence):
         loss = self.loss(x,y)
@@ -65,8 +66,8 @@ class NeuralNetworkFullyConnected(object):
         self.lastLoss = loss
     
     # Allows you to partially fit, then pause to gather statistics / output intermediate information, then continue fitting
-    def incrementalFit(self, x, y, epochs=1, step=0.01, convergence = None):
-        for _ in range(epochs):
+    def incrementalFit(self, x, y, maxEpochs=1, stepSize=0.01, convergence = None):
+        for _ in range(maxEpochs):
             if self.converged:
                 return
         

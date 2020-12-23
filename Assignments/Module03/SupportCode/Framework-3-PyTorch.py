@@ -1,9 +1,6 @@
 import MachineLearningCourse.MLProjectSupport.Blink.BlinkDataset as BlinkDataset
 
-### UPDATE this path for your environment
-kDataPath = "MachineLearningCourse\\MLProjectSupport\\Blink\\dataset\\"
-
-(xRaw, yRaw) = BlinkDataset.LoadRawData(kDataPath)
+(xRaw, yRaw) = BlinkDataset.LoadRawData()
 
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 
@@ -143,8 +140,8 @@ Charting.PlotSeries([trainLosses, validationLosses], ["Train Loss", "Validate Lo
 # Evaluate the Model
 ##
 
-import MachineLearningCourseInstructor.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
-import MachineLearningCourseInstructor.MLUtilities.Evaluations.ErrorBounds as ErrorBounds
+import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
+import MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds as ErrorBounds
 
 model.train(mode=False)
 yTestPredicted = model(xTest)

@@ -2,10 +2,7 @@ kOutputDirectory = "C:\\temp\\visualize"
 
 import MachineLearningCourse.MLProjectSupport.Adult.AdultDataset as AdultDataset
 
-### UPDATE this path for your environment
-kDataPath = "MachineLearningCourse\\MLProjectSupport\\Adult\\dataset\\adult.data"
-
-(xRaw, yRaw) = AdultDataset.LoadRawData(kDataPath)
+(xRaw, yRaw) = AdultDataset.LoadRawData()
 
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 
@@ -31,8 +28,8 @@ for i in range(10):
     print("%d - " % (yTrain[i]), xTrain[i])
 
 ############################
-import MachineLearningCourseInstructor.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
-import MachineLearningCourseInstructor.MLUtilities.Evaluations.ErrorBounds as ErrorBounds
+import MachineLearningCourse.MLUtilities.Evaluations.EvaluateBinaryClassification as EvaluateBinaryClassification
+import MachineLearningCourse.MLUtilities.Evaluations.ErrorBounds as ErrorBounds
 import MachineLearningCourse.MLUtilities.Learners.MostCommonClassModel as MostCommonClassModel
 
 model = MostCommonClassModel.MostCommonClassModel()

@@ -25,7 +25,7 @@ if runUnitTest:
         print(" fit for %d iterations, train set loss is %.4f" % (model.totalGradientDescentSteps, model.loss(xTrain, yTrain)))
 
         # and visualize the model's decision boundary
-        visualization = Visualize2D.Visualize2D(kOutputDirectory, "{0:04}.test".format(model.totalIterations))
+        visualization = Visualize2D.Visualize2D(kOutputDirectory, "{0:04}.test".format(model.totalGradientDescentSteps))
         visualization.Plot2DDataAndBinaryConcept(xTrain, yTrain, model)
         visualization.Save()
         
@@ -37,9 +37,7 @@ if runSMSSpam:
     ############################
     # Set up the data
 
-    kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
-
-    (xRaw, yRaw) = SMSSpamDataset.LoadRawData(kDataPath)
+    (xRaw, yRaw) = SMSSpamDataset.LoadRawData()
     
     import MachineLearningCourse.MLUtilities.Data.Sample as Sample
     (xTrainRaw, yTrain, xValidateRaw, yValidate, xTestRaw, yTest) = Sample.TrainValidateTestSplit(xRaw, yRaw, percentValidate=.1, percentTest=.1)

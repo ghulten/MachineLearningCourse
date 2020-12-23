@@ -26,7 +26,7 @@ class LinearHeuristicModel(object):
                         [ example[i] * self.weights[i] for i in range(len(example)) ]   # each feature is multiplied by the associated weight
                         )
 
-            predictions.append( 1 if score > threshold else 0 )
+            predictions.append( 1 if score >= threshold else 0 )
         
         return predictions
     

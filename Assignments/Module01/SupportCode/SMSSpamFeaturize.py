@@ -17,7 +17,7 @@ class SMSSpamFeaturize(object):
     def FindMostFrequentWords(self, x, n):
         print("Stub FindMostFrequentWords in ", __file__)
 
-    def FindTopWordsByMutualInformation(self, x, n):
+    def FindTopWordsByMutualInformation(self, x, y, n):
         print("Stub FindTopWordsByMutualInformation in ", __file__)
 
     def CreateVocabulary(self, xTrainRaw, yTrainRaw, supplementalVocabularyWords=[]):

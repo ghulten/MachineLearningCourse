@@ -3,7 +3,7 @@ Open SupportCode\Framework-3-LogisticRegression.py.
 Complete the implementation of LogisticRegression using the stub referenced from the framework. 
 Note that the framework provides a small test case with some visualizations to help you debug.
 
-Use a threshold of 0.5 for classification (if score for a sample after the sigmoid is > 0.5 it is classified as 1 (in this case, that's spam)).
+Use a threshold of 0.5 for classification (if score for a sample after the sigmoid is >= 0.5 it is classified as 1 (in this case, that's spam)).
 
 Use gradient descent for optimization as outlined in the framework code.
 
@@ -11,7 +11,7 @@ HAND IN:
 
 1 Point --
 
-The visualization of the model learned on the UnitTest using 10 iterations of gradient descent, stepSize=1.0, convergence=0.005
+The visualization of the model learned on the UnitTest using 10 iterations of gradient descent, stepSize=1.0, convergence=0.005. (Not the model weights!)
 
 2 Points –
 
@@ -29,17 +29,20 @@ for each setting of the convergence hyperparameter.
 
 1 Point – 
 
-Describe in 2-3 sentences your interpretation of the output of this hyperparameter sweep. Include a justification for trying more parameters
+Describe in 2-3 sentences your interpretation of the output of this hyperparameter sweep. Include a justification for trying more values of the 'convergence' hyperparameter
   or stopping there. If you do think you should try more parameters, what is the next one you would try?
 
 1 Point – 
 
 Produce a plot showing the training set loss and the validation set loss every 100 steps during the run 
  with the best convergence value you found in the parameter sweep and stepSize of 1.0. In no more than 100
- words describe the difference between the training and validation loss. Which set does the model have better loss on? Why?
+ words describe the difference between the training and validation loss. Turn in the plot and answer the following:
+ Which set does the model have better loss on? Why?
 
 RESOURCES:
 
 The best way to get info on the elements you'll need to implement is to review the course slides for this lecture, which you can find on this page: https://intelligentsystem.io/course.html
 
 [ Direct link: https://intelligentsystem.io/course/lectures/04%20--%20Logistic%20Regression.pptx ]
+
+For plotting resources, check out the MatPlotLib tutorials: https://matplotlib.org/3.3.1/tutorials/index.html

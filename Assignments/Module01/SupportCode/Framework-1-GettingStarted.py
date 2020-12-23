@@ -1,12 +1,9 @@
 import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamDataset
 
-### UPDATE this path for your environment
-kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
-
 # x represents training data, y represents the labels. These are parallel arrays.
 #  'Raw' indicates that the data has not been processed into features.
 #    in this case, the xRaw array contains the raw SMS text strings and yRaw contains 1 if the message is spam and 0 if it isn't.
-(xRaw, yRaw) = SMSSpamDataset.LoadRawData(kDataPath)
+(xRaw, yRaw) = SMSSpamDataset.LoadRawData()
 
 
 # The 'Sample' utility contains helper functions for spliting & sampling data, which you will need to do a lot in Machine Learning.

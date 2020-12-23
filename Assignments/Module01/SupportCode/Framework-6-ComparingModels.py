@@ -1,8 +1,6 @@
 import MachineLearningCourse.MLProjectSupport.SMSSpam.SMSSpamDataset as SMSSpamDataset
 
-kDataPath = "MachineLearningCourse\\MLProjectSupport\\SMSSpam\\dataset\\SMSSpamCollection"
-
-(xRaw, yRaw) = SMSSpamDataset.LoadRawData(kDataPath)
+(xRaw, yRaw) = SMSSpamDataset.LoadRawData()
 
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 import MachineLearningCourse.Assignments.Module01.SupportCode.SMSSpamFeaturize as SMSSpamFeaturize
@@ -16,8 +14,8 @@ doModelEvaluation = True
 if doModelEvaluation:
     ######
     ### Build a model and evaluate on validation data
-    stepSize = 0.1
-    convergence = 0.0001
+    stepSize = 1.0
+    convergence = 0.001
 
     featurizer = SMSSpamFeaturize.SMSSpamFeaturize()
     featurizer.CreateVocabulary(xTrainRaw, yTrain, numMutualInformationWords = 25)

@@ -2,10 +2,7 @@ kOutputDirectory = "C:\\temp\\visualize"
 
 import MachineLearningCourse.MLProjectSupport.Blink.BlinkDataset as BlinkDataset
 
-### UPDATE this path for your environment
-kDataPath = "MachineLearningCourse\\MLProjectSupport\\Blink\\dataset\\"
-
-(xRaw, yRaw) = BlinkDataset.LoadRawData(kDataPath)
+(xRaw, yRaw) = BlinkDataset.LoadRawData()
 
 import MachineLearningCourse.MLUtilities.Data.Sample as Sample
 
