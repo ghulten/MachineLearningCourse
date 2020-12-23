@@ -22,8 +22,7 @@ Your implementation should support:
     - hiddenLayersNodeCounts, a list with one int per hidden layer indicating the number of nodes in that layer, 
         e.g. a network with two hidden layers with 10 nodes if the first and 5 in the second would have: 
           hiddenLayersNodeCounts = [ 10, 5 ] 
-  * A single output with log loss as the loss function
-
+  * A single output with Mean Squared Error as the loss function
 
 Initialize your weights of all the network's parameters to small random initial values using:
 

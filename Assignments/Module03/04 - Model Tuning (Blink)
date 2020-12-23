@@ -6,7 +6,7 @@ There is no framework code.
 
 But here are some code snippets that might help:
 
- # this code 
+ # this code will convert 2-d arrays (e.g. input images) into 1-d data for feeding to fully connected layers
  out = out.reshape(out.size(0), -1)
 
 

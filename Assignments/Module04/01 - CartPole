@@ -14,6 +14,7 @@ In summary, you should support these parameters:
     * randomActionRate = ... # Percent of time the next action selected by GetAction is totally random
     * actionProbabilityBase = ... # This is k from the P(a_i|s) expression from section 13.3.5 and influences how random exploration is
     * learningRateScale = ... # Should be multiplied by visits_n from 13.11
+    * [ and you might want to understand/tune binsPerDimension from the framework code ]
  
 
 Hand in:

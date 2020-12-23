@@ -3,7 +3,7 @@ Open SupportCode\Framework-3-LogisticRegression.py.
 Complete the implementation of LogisticRegression using the stub referenced from the framework. 
 Note that the framework provides a small test case with some visualizations to help you debug.
 
-Use a threshold of 0.5 for classification (if score for a sample after the sigmoid is > 0.5 it is classified as 1 (in this case, that's spam)).
+Use a threshold of 0.5 for classification (if score for a sample after the sigmoid is >= 0.5 it is classified as 1 (in this case, that's spam)).
 
 Use gradient descent for optimization as outlined in the framework code.
 

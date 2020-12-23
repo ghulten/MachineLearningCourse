@@ -35,11 +35,11 @@ class NeuralNetworkFullyConnected(object):
     def backpropagate(self, y):
         print("Stub backpropogate in ", __file__)
 
-    def updateweights(self, step, momentum):
+    def updateweights(self, step):
         print("Stub updateweights in ", __file__)
 
     def loss(self, x, y):        
-        return EvaluateBinaryProbabilityEstimate.LogLoss(y, self.predictProbabilities(x))
+        print("Stub loss in ", __file__)
 
     def predictOneProbability(self, x):
         self.feedForward(x)
@@ -53,7 +53,7 @@ class NeuralNetworkFullyConnected(object):
         return [ self.predictOneProbability(sample) for sample in x ]
 
     def predict(self, x, threshold = 0.5):
-        return [ 1 if probability > threshold else 0 for probability in self.predictProbabilities(x) ]
+        return [ 1 if probability >= threshold else 0 for probability in self.predictProbabilities(x) ]
     
     def __CheckForConvergence(self, x, y, convergence):
         loss = self.loss(x,y)

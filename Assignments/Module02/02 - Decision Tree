@@ -18,7 +18,9 @@ Recall that Information Gain achieved by splitting on feature i with threshold t
 
 And Entropy(data) is:
    
-   p(data has label 1) * log(p(data has label 1)) + p(dat has label 0) * log(p(data has label 0))
+   p(data has label 1) * log(p(data has label 1)) + p(data has label 0) * log(p(data has label 0))
+
+   [ You should use adative smoothing, or define entropy of "0 lg(0)" as 0 to avoid numerical issues ]
 
 The terminal condition for the recursion occurs:
    If information gain of every possible split is 0.
