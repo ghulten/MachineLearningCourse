@@ -1,7 +1,7 @@
 
 Open SupportCode\Framework-2-NeuralNetwork.py and implement learning of fully connected neural networks
    with an input layer, N hidden layers of variable size, and an output layer with a single output using
-   the Backpropagation algorithm as described in Mitchell (with stochastic gradient descent).
+   the Backpropagation algorithm as described in Mitchell (with *stochastic gradient descent*).
 
 The implementation should be roughly:
     For each epoch:
@@ -14,15 +14,16 @@ The implementation should be roughly:
 
 Your implementation should support:
 
-  * A N fully connected variable size followed by an output layer, all with sigmoid activation.
+  * An N fully connected variable size followed by an output layer, all with sigmoid activation.
   * Incremental stocastic gradient descent: run an epoch, stop and measure, then run another, etc.
   * Hyperparameters of:
     - stepSize, for the size of the weight updtate to do with each step of stocastic gradient descent
-    - convergence, which indicates the minimum loss improvemnt per epoch in *training set* loss before convergence
+    - convergence, which indicates the minimum loss improvement per epoch in *training set* loss before convergence
     - hiddenLayersNodeCounts, a list with one int per hidden layer indicating the number of nodes in that layer, 
         e.g. a network with two hidden layers with 10 nodes if the first and 5 in the second would have: 
           hiddenLayersNodeCounts = [ 10, 5 ] 
-  * A single output with Mean Squared Error as the loss function
+  * A single output with MSE loss as the loss function
+
 
 Initialize your weights of all the network's parameters to small random initial values using:
 
@@ -40,7 +41,11 @@ Demonstrate your model works by training on the blink data set. Use the intensit
 
 Hand in:
 
-2 point - your source code for neural network training. Make us it's easy for the TA to find the key components: forward propagaion, backward propagaion, weight updates, loss calculation.
+2 point - your source code for neural network training. Make us it's easy for the TA to find the key components: 
+  - forward propagation
+  - backward propagation
+  - weight updates
+  - loss calculation.
 
 A report containing:
 
@@ -52,11 +57,17 @@ A report containing:
 
 For the following, we are trying to find reasonable values and demonstrate the training algorithm is working, so you can skip on cross validation and error bars...
 
-2 points - Tune the parameters until you have a single layer network with validation set accuracy greater than 85%. Report on the parameters you used. Include a chart
-    with training and validation set loss on the y-axis vs epoch nuber on the x-axis. In 1-2 sentences indicate the approach you took to finding hyperparameters that work.
-    Include a brief log of the Hyperparameters you tried.
+2 points - Tune the parameters until you have a single layer network with validation set accuracy greater than 85%. 
+    - Report on the parameters you used. 
+    - Include a chart with training and validation set loss on the y-axis vs epoch number on the x-axis. 
+    - Include a chart with the training and validation accuracies on the y-axis vs epoch number on the x-axis. 
+    - In 1-2 sentences indicate the approach you took to finding hyperparameters that work.
+    - Include a brief log of the Hyperparameters you tried.
 
-2 points - Tune the parameters until you have a two layer network with validation set accuracy greater than 89%. Report on the parameters you used. Include a chart
-    with training and validation set loss on the y-axis vs epoch nuber on the x-axis. In 1-2 sentences indicate the approach you took to finding hyperparameters that work.
-    Include a brief log of the Hyperparameters you tried.
+2 points - Tune the parameters until you have a two layer network with validation set accuracy greater than 89%. 
+    - Report on the parameters you used. 
+    - Include a chart with training and validation set loss on the y-axis vs epoch number on the x-axis. 
+    - Include a chart with the training and validation accuracies on the y-axis vs epoch number on the x-axis. 
+    - In 1-2 sentences indicate the approach you took to finding hyperparameters that work.
+    - Include a brief log of the Hyperparameters you tried.
 

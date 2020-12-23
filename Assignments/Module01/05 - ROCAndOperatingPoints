@@ -18,7 +18,7 @@ Tune the hyperperamters 'numMutualInformationWords' and 'numFrequentWords' until
 that is better than both of the models in the framework code at both the 50% and the 10% false positive rate.
 
 1.0 points - In a few sentences, describe the strategy you used to find the better hyperparameters and 
-  the hyperperparameters you found to achieve the result?
+  the hyperperparameters you found to achieve the result? What were the hyperparameters?
 
 1.0 points - Create an ROC plot showing:
    * the model with 25 features by frequency;

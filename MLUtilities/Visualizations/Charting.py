@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Note: matplotlib keeps internal state, so it's hard to wrap it cleanly. Keeping each charting call self contained for API simplicity.
 
-def __SetUpChart(chartTitle=None, xAxisTitle=None, yAxisTitle=None):
+def __SetUpChart(chartTitle=None, xAxisTitle=None, yAxisTitle=None, xAxisLogScale=False):
    if chartTitle == None or xAxisTitle == None or yAxisTitle == None:
       raise UserWarning("Label your chart -- title and axes!")
    
@@ -15,6 +15,10 @@ def __SetUpChart(chartTitle=None, xAxisTitle=None, yAxisTitle=None):
       
    ax.set(title=chartTitle)      
    ax.set(xlabel=xAxisTitle, ylabel=yAxisTitle)
+
+   if xAxisLogScale:
+      # matplotlib does support other scale options, but we'll probably never use them here (?)
+      ax.set_xscale('log')
    
    return fig, ax
 
@@ -63,7 +67,7 @@ def __GetMarker(index, useMarkers=False):
    else:
       return None
 
-def PlotSeries(seriesData, seriesLabels, xAxisPoints, useLines=True, useMarkers=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, outputDirectory=None, fileName=None):
+def PlotSeries(seriesData, seriesLabels, xAxisPoints, useLines=True, useMarkers=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, xAxisLogScale=False, outputDirectory=None, fileName=None):
    if len(seriesData) != len(seriesLabels):
       raise UserWarning("Mismatched number of seriesData and seriesLabels")
    
@@ -71,14 +75,14 @@ def PlotSeries(seriesData, seriesLabels, xAxisPoints, useLines=True, useMarkers=
       if len(seriesData[i]) != len(xAxisPoints):
          raise UserWarning("Number of points in series %d does not match the number of xAxisPoints" % (i))
 
-   fig, ax =__SetUpChart(chartTitle, xAxisTitle, yAxisTitle)
+   fig, ax =__SetUpChart(chartTitle, xAxisTitle, yAxisTitle, xAxisLogScale)
    
    for i in range(len(seriesData)):
       ax.plot(xAxisPoints, seriesData[i], marker= __GetMarker(i, useMarkers), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
               
    __CompleteChart(fig, ax, outputDirectory, fileName, yTopLimit, yBotLimit)
 
-def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoints, useLines=True, useMarkers=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, outputDirectory=None, fileName=None):
+def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoints, useLines=True, useMarkers=True, chartTitle=None, xAxisTitle=None, yAxisTitle=None, yTopLimit=None, yBotLimit=None, xAxisLogScale=False, outputDirectory=None, fileName=None):
    if len(seriesData) != len(seriesLabels):
       raise UserWarning("Mismatched number of seriesData and seriesLabels")
    
@@ -93,7 +97,7 @@ def PlotSeriesWithErrorBars(seriesData, seriesErrorBars, seriesLabels, xAxisPoin
          raise UserWarning("Number of points in series %d does not match the number of error bars" % (i))
 
 
-   fig, ax =__SetUpChart(chartTitle, xAxisTitle, yAxisTitle)
+   fig, ax =__SetUpChart(chartTitle, xAxisTitle, yAxisTitle, xAxisLogScale)
    
    for i in range(len(seriesData)):
       ax.errorbar(xAxisPoints, seriesData[i], seriesErrorBars[i], marker= __GetMarker(i, useMarkers), color = __GetLineColor(i), linestyle=__GetLineStyle(i, useLines), label = seriesLabels[i])
